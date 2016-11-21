@@ -19,6 +19,7 @@ public class admin_criminalrecordpanel extends JPanel {
 		JButton button_1 = new JButton("Edit");
 		
 		JButton button_2 = new JButton("Delete");
+		//comment
 		
 		JButton button_3 = new JButton("View");
 		GroupLayout groupLayout = new GroupLayout(this);
