@@ -26,7 +26,7 @@ public class SplashScreen extends JWindow {
     setBounds(x,y,width,height);
 
     // Build the splash screen
-    JLabel label = new JLabel(new ImageIcon("src//loading.gif"));
+    JLabel label = new JLabel(new ImageIcon("src//loading2.gif"));
     JLabel copyrt = new JLabel
       ("Copyright 2016, ASDF", JLabel.CENTER);
     copyrt.setFont(new Font("Sans-Serif", Font.BOLD, 12));
