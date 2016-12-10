@@ -115,7 +115,7 @@ public class Login {
 		panel.setLayout(gl_panel);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\kinjolnath\\Desktop\\logo2.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("./src/logo2.jpg"));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
