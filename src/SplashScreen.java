@@ -50,14 +50,14 @@ public class SplashScreen extends JWindow {
 
   public static void main(String[] args) throws MalformedURLException, InterruptedException {
     // Throw a nice little title page up on the screen first
-    SplashScreen splash = new SplashScreen(4300);
-    
-    // Normally, we'd call splash.showSplash() and get on with the program.
-    // But, since this is only a test...
-    splash.showSplash ();
-    Thread.sleep(100);
-    Login w = new Login();
-    w.main();
+//    SplashScreen splash = new SplashScreen(4300);
+//    
+//    
+//    splash.showSplash ();
+//    Thread.sleep(100);
+//    
+    Login.main();
+   
     
     
   }
