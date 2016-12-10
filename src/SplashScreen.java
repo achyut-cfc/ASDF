@@ -53,12 +53,13 @@ public class SplashScreen extends JWindow {
     SplashScreen splash = new SplashScreen(4300);
     
     // Normally, we'd call splash.showSplash() and get on with the program.
+    Login w = new Login();
     // But, since this is only a test...
     splash.showSplash ();
     Thread.sleep(100);
-    Login w = new Login();
+    // Login w = new Login();
     w.main();
-    
+    //UserProf.main(args);
     
   }
 }
