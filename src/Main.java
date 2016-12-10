@@ -8,7 +8,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class Main {
-
+	  static String url = "jdbc:mysql://10.6.7.119:3306/database1";
 	public static void main(String[] args) {
 		
 
@@ -16,10 +16,10 @@ public class Main {
 
 	       try
 	       {
-
-	           String url = "jdbc:mysql://10.6.7.119:3306/database1";
+	    	   
+	         
 	           Class.forName ("com.mysql.jdbc.Driver");
-	           conn = DriverManager.getConnection (url,"clint","passkey1");
+	           conn = DriverManager.getConnection (Main.url,"clint","passkey1");
 	           JOptionPane.showMessageDialog(null, "Connection Established");
 	           Statement s=conn.createStatement();
 	         
@@ -27,8 +27,8 @@ public class Main {
 	           EventQueue.invokeLater(new Runnable() {
 	       		public void run() {
 	       			try {
-	       				Login window = new Login();
-	       				window.frame.setVisible(true);
+	       				Login LoginWindow = new Login();
+	       				LoginWindow.frame.setVisible(true);
 	       				
 	       				
 	       			} catch (Exception e) {
@@ -41,28 +41,10 @@ public class Main {
 	       }
 	       catch (Exception e)
 	       {
-	          JOptionPane.showMessageDialog(null, e);
+	          JOptionPane.showMessageDialog(null,"Connection failed.\n"+ e);
 
 	       }
-	       finally
-	       {
-	           if (conn != null)
-	           {
-	               
-	               
-	                   try {
-						conn.close ();
-						 JOptionPane.showMessageDialog(null, "Connection closed");
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						JOptionPane.showMessageDialog(null, e);
-					}
-	                  
-	                   
-	               
-	               
-	           }
-	       }
+	     
 		
 }
 		// TODO Auto-generated method stub
