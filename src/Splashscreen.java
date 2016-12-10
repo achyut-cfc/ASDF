@@ -30,15 +30,14 @@ public class Splashscreen extends JFrame {
 					window.setBounds(500, 150, 300, 200);
 					window.setVisible(true);
 					try {
-					    Thread.sleep(5000);
+					    Thread.sleep(2000);
 					} catch (InterruptedException e) {
 					    e.printStackTrace();
 					}
+					
 					window.setVisible(false);
 					Login window1 = new Login();
 					Login.main();
-					
-				
 					window.dispose();
 				} catch (Exception e) {
 					e.printStackTrace();
