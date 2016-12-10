@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 
 public class Login {
 
-	private JFrame frame;
+	private JFrame frmCrimeReportingSystem;
 	private JTextField txtUsername;
 	private JPasswordField passwordField;
 
@@ -29,7 +29,7 @@ public class Login {
 			public void run() {
 				try {
 					Login window = new Login();
-					window.frame.setVisible(true);
+					window.frmCrimeReportingSystem.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -48,10 +48,12 @@ public class Login {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(Color.BLACK);
-		frame.setBounds(100, 100, 842, 468);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmCrimeReportingSystem = new JFrame();
+		frmCrimeReportingSystem.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\kinjolnath\\Desktop\\logo2.jpg"));
+		frmCrimeReportingSystem.setTitle("Crime Reporting System");
+		frmCrimeReportingSystem.getContentPane().setBackground(Color.BLACK);
+		frmCrimeReportingSystem.setBounds(100, 100, 842, 468);
+		frmCrimeReportingSystem.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.BLACK);
@@ -116,7 +118,7 @@ public class Login {
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setIcon(new ImageIcon("./src/logo2.jpg"));
-		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		GroupLayout groupLayout = new GroupLayout(frmCrimeReportingSystem.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
@@ -137,6 +139,6 @@ public class Login {
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 133, GroupLayout.PREFERRED_SIZE)
 					.addGap(24))
 		);
-		frame.getContentPane().setLayout(groupLayout);
+		frmCrimeReportingSystem.getContentPane().setLayout(groupLayout);
 	}
 }
