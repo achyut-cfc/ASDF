@@ -88,7 +88,8 @@ public class Login {
 				        	  }
 				        	  else if(set.getString("Designation").equals("Executive")) {
 				        		  
-				        		  
+				        		  Executive_home.main();
+				        		  frame.setVisible(false);
 				        	  }
 				        	  else{
 				        		  JOptionPane.showMessageDialog(null, "You have not been assigned a designation. Try contacting the admin");
