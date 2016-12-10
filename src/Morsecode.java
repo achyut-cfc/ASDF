@@ -12,14 +12,13 @@ public class Morsecode {
 					"-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "|" };
 			System.out.println("Please enter MC if you want to translate Morse Code into English, or Eng if you want to translate from English into Morse Code");
 			String a = br.readLine();
-			Morsecode ob=new Morsecode();
 			if (a.equals("MC")) {
-				ob.morse(Morse,English);
+				morse(Morse,English);
 			}
 			
 
 			else if (a.equals("Eng")) {
-				ob.eng(Morse,English);
+				eng(Morse,English);
 			}
 
 			else {
@@ -27,32 +26,14 @@ public class Morsecode {
 
 			}
 		}
-public void morse(String Morse[],char English[])throws IOException
+		// function to convert morse to english//
+public static void morse(String Morse[],char English[])throws IOException
 {
 	String build;
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Please enter a sentence in Morse Code. Separate each letter/digit with a single space and delimit multiple words with a | .");
 		String b = br.readLine();
-		// b = b +" ";
-		/*while (z < b.length() - 1) {
-			System.out.println("After while: " + z);
-			build = "";
-			if (b.charAt(z) == ' ') {
-				System.out.println("In if: " + z);
-				build = build + b.substring(i, z);
-				i = z + 1;
-				System.out.println("After i: " + z);
-				for (int m = 0; m < Morse.length; m++) {
-					if (build.equals(Morse[m]))
-
-						System.out.print(English[m] + " ");
-
-				}
-
-			} else
-				z++;
-
-		}*/
+		
 		
 		StringTokenizer stok = new StringTokenizer(b, " |");
 		while (stok.hasMoreTokens()) {
@@ -64,7 +45,8 @@ public void morse(String Morse[],char English[])throws IOException
 		}
 		
 	}
-		public void eng(String Morse[],char English[])throws IOException
+ 	// Function to convert english to morse//
+		public static void eng(String Morse[],char English[])throws IOException
 		{
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			System.out.println("Please enter a sentence in English, and separate each word with a blank space.");
