@@ -78,7 +78,7 @@ public class Login {
 				        	  if (set.getString("Designation").equals("Informer")){
 				        		  
 				        		  UserProf.main();
-				        		  frame.setVisible(true); 
+				        		  frame.setVisible(false); 
 				        		  
 				        	  }
 				        	  else if(set.getString("Designation").equals("Admin")){
