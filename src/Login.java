@@ -2,15 +2,26 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JPasswordField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
+
+
+
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Login {
 
@@ -21,12 +32,14 @@ public class Login {
 	/**
 	 * Launch the application.
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login window = new Login();
-					window.frame.setVisible(true);
+					Login newlogin = new Login();
+					
+					newlogin.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -56,12 +69,65 @@ public class Login {
 		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton btnLogin = new JButton("Login");
-		//frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		//frame.setVisible(true);
-		//frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				
+		           String url = "jdbc:mysql://10.6.7.119:3306/database1";
+		           try {
+					Class.forName ("com.mysql.jdbc.Driver");
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		           Connection conn;
+				try {
+					conn = DriverManager.getConnection (url,"clint","passkey1");
+						
+			          PreparedStatement pst=conn.prepareStatement("Select * from user where user_id=? and password=?");
+			          pst.setString(1, txtUsername.getText());
+			          pst.setString(2, passwordField.getText());
+			          
+			          ResultSet set= pst.executeQuery();
+			          
+			          if (set.next()){
+			        	  JOptionPane.showMessageDialog(null, "Login Successful");
+			        	  
+			        	  UserProf frame = new UserProf();
+			        	  frame.setVisible(true);
+			          }
+			          else
+			        	  JOptionPane.showMessageDialog(null, "User ID or password incorrect> try Again");
+			           
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		         
+		    
+		         
+				
+			}
+		});
+		
 		
 		txtUsername = new JTextField();
+		txtUsername.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+				txtUsername.setText("");
+				txtUsername.setForeground(Color.BLACK);
+			}
+		});
+		txtUsername.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				txtUsername.setText("");
+				
+				txtUsername.setForeground(Color.black);
+				}
+		});
+		
 		txtUsername.setForeground(Color.LIGHT_GRAY);
 		txtUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		txtUsername.setText("Username");
