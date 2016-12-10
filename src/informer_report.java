@@ -144,14 +144,11 @@ public class informer_report extends JFrame {
 		JLabel lblSkintone = new JLabel("Skintone");
 		lblSkintone.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Pale");
-		btnGroupSkintone.add(rdbtnNewRadioButton_1);
+		JRadioButton rdbtnBrown = new JRadioButton("Brown");
+		btnGroupSkintone.add(rdbtnBrown);
 		
 		JRadioButton rdbtnFair = new JRadioButton("Fair");
 		btnGroupSkintone.add(rdbtnFair);
-		
-		JRadioButton rdbtnTan = new JRadioButton("Tan");
-		btnGroupSkintone.add(rdbtnTan);
 		
 		JRadioButton rdbtnDark = new JRadioButton("Dark");
 		btnGroupSkintone.add(rdbtnDark);
@@ -212,19 +209,19 @@ public class informer_report extends JFrame {
 											.addGap(18)
 											.addComponent(rdbtnFemale, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
 											.addPreferredGap(ComponentPlacement.RELATED)
-											.addComponent(rdbtnOther, GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE))
+											.addComponent(rdbtnOther, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE))
 										.addGroup(gl_panel.createSequentialGroup()
 											.addComponent(lblSkintone)
-											.addPreferredGap(ComponentPlacement.RELATED, 468, Short.MAX_VALUE))
+											.addPreferredGap(ComponentPlacement.RELATED, 489, Short.MAX_VALUE))
 										.addComponent(lblHair)
 										.addGroup(gl_panel.createSequentialGroup()
 											.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
 												.addGroup(gl_panel.createSequentialGroup()
-													.addComponent(rdbtnNewRadioButton_1, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+													.addComponent(rdbtnBrown, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
 													.addPreferredGap(ComponentPlacement.RELATED)
 													.addComponent(rdbtnFair, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
 													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(rdbtnTan, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+													.addComponent(rdbtnDark, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 												.addGroup(gl_panel.createSequentialGroup()
 													.addGap(69)
 													.addComponent(lblColour)
@@ -232,18 +229,13 @@ public class informer_report extends JFrame {
 													.addComponent(HaircolourCombobox, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
 													.addGap(18)
 													.addComponent(lblNewLabel_1)))
-											.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_panel.createSequentialGroup()
-													.addGap(18)
-													.addComponent(HairstyleCombobox, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-													.addGap(27)
-													.addComponent(lblFacialHair)
-													.addGap(18)
-													.addComponent(FacialhairCombobox, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-													.addPreferredGap(ComponentPlacement.RELATED))
-												.addGroup(gl_panel.createSequentialGroup()
-													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(rdbtnDark, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE))))))
+											.addGap(18)
+											.addComponent(HairstyleCombobox, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+											.addGap(27)
+											.addComponent(lblFacialHair)
+											.addGap(18)
+											.addComponent(FacialhairCombobox, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
+											.addPreferredGap(ComponentPlacement.RELATED))))
 								.addGroup(gl_panel.createSequentialGroup()
 									.addComponent(rdbtnNewRadioButton)
 									.addGap(18)
@@ -308,13 +300,11 @@ public class informer_report extends JFrame {
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(rdbtnNewRadioButton_1, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+								.addComponent(rdbtnBrown, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
 								.addComponent(rdbtnFair, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(lblHair))
-						.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-							.addComponent(rdbtnTan, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-							.addComponent(rdbtnDark, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(rdbtnDark, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
 					.addGap(4)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblColour)
