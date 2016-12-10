@@ -60,7 +60,7 @@ public class informer_report extends JFrame {
 		lblReportANew.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		
-		JPanel panel = new JPanel();
+		formpanel panel = new formpanel();
 	
 		
 		
@@ -169,7 +169,7 @@ public class informer_report extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JComboBox HairstyleCombobox = new JComboBox();
-		HairstyleCombobox.setModel(new DefaultComboBoxModel(new String[] {"Straight", "Curly", "Wavy", "..."}));
+		HairstyleCombobox.setModel(new DefaultComboBoxModel(new String[] {"Straight", "Curly", "Wavy", "Bald", "..."}));
 		
 		JLabel lblFacialHair = new JLabel("Facial Hair");
 		lblFacialHair.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -239,7 +239,7 @@ public class informer_report extends JFrame {
 													.addGap(27)
 													.addComponent(lblFacialHair)
 													.addGap(18)
-													.addComponent(FacialhairCombobox, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
+													.addComponent(FacialhairCombobox, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
 													.addPreferredGap(ComponentPlacement.RELATED))
 												.addGroup(gl_panel.createSequentialGroup()
 													.addPreferredGap(ComponentPlacement.RELATED)
@@ -254,7 +254,7 @@ public class informer_report extends JFrame {
 									.addComponent(rdbtnMurder, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
 									.addPreferredGap(ComponentPlacement.RELATED)
 									.addComponent(rdbtnOther_1)))
-							.addGap(648))
+							.addGap(627))
 						.addGroup(gl_panel.createSequentialGroup()
 							.addComponent(lblOtherDetails)
 							.addPreferredGap(ComponentPlacement.RELATED)
