@@ -2,46 +2,48 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JPasswordField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.awt.event.ActionEvent;
 
 public class Login {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField txtUsername;
 	private JPasswordField passwordField;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login window = new Login();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the application.
-	 */
+	 // Create the application.
+	 
 	public Login() {
 		initialize();
 	}
 
+	public static void main(){
+		Login w = new Login();
+	    w.frame.setVisible(true);
+	}
+	
+	
 	/**
+	 
+	 
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
@@ -56,11 +58,58 @@ public class Login {
 		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton btnLogin = new JButton("Login");
-		//frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		//frame.setVisible(true);
-		//frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-		
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			           java.sql.Connection conn;
+					try {
+						
+						conn = DriverManager.getConnection (Main.url,"clint","passkey1");
+							
+				          java.sql.PreparedStatement pst=conn.prepareStatement("Select * from user where user_id=? and password=?");
+				          pst.setString(1, txtUsername.getText());
+				          pst.setString(2, passwordField.getText());
+				          
+				          ResultSet set= pst.executeQuery();
+				        int flag=0;
+				          while(set.next()){
+				        	  
+				        	  flag=1;
+				        	  if (set.getString("Designation").equals("Informer")){
+				        		  
+				        		  System.out.println("hello");
+				        		  
+				        	  }
+				        	  else if(set.getString("Designation").equals("Admin")){
+				        		  
+				        		  admin_welcome.main();
+				        		  frame.setVisible(false);
+				        	  }
+				        	  else if(set.getString("Designation").equals("Executive")) {
+				        		  
+				        		  UserProf.main();
+				        		  frame.setVisible(true);
+				        	  }
+				        	  else{
+				        		  JOptionPane.showMessageDialog(null, "You have not been assigned a designation. Try contacting the admin");
+				        	  }
+				        	  
+				        	  conn.close();
+				        	  
+				          }
+				          if (flag==0){
+				        	  JOptionPane.showMessageDialog(null, "User not found");
+				          }
+				          
+				           
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				
+			}
+		});
+	
 		txtUsername = new JTextField();
 		txtUsername.setForeground(Color.LIGHT_GRAY);
 		txtUsername.setHorizontalAlignment(SwingConstants.CENTER);
@@ -111,4 +160,5 @@ public class Login {
 		);
 		frame.getContentPane().setLayout(groupLayout);
 	}
+
 }
