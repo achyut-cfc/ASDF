@@ -25,9 +25,7 @@ public class UserProf extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main() {
-		UserProf frame = new UserProf();
-		frame.setVisible(true);
+//	public static void main(String[] args) {
 //		EventQueue.invokeLater(new Runnable() {
 //			public void run() {
 //				try {
@@ -38,7 +36,7 @@ public class UserProf extends JFrame {
 //				}
 //			}
 //		});
-	}
+//	}
 
 	/**
 	 * Create the frame.
@@ -53,11 +51,12 @@ public class UserProf extends JFrame {
 		Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
 		
 		JLabel lblName = new JLabel("Name :");
-		lblName.setBounds(15, 16, 143, 57);
+		lblName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblName.setBounds(42, 11, 143, 57);
 		lblName.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
-		JLabel lblRank = new JLabel("Rank :");
-		lblRank.setBounds(15, 79, 90, 17);
+		JLabel lblRank = new JLabel("Designation :");
+		lblRank.setBounds(15, 79, 154, 28);
 		lblRank.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
 		JButton btnMissionReport = new JButton("(informer report)");
@@ -65,13 +64,13 @@ public class UserProf extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnMissionReport.setBounds(72, 190, 113, 23);
+		btnMissionReport.setBounds(211, 126, 113, 23);
 		
 		JButton btnReportStatus = new JButton("Check  Status");
-		btnReportStatus.setBounds(191, 190, 99, 23);
+		btnReportStatus.setBounds(221, 168, 99, 23);
 		
 		JButton btnBack = new JButton("Log Out");
-		btnBack.setBounds(314, 190, 113, 23);
+		btnBack.setBounds(211, 223, 113, 23);
 		contentPane.setLayout(null);
 		contentPane.add(btnBack);
 		contentPane.add(btnMissionReport);
