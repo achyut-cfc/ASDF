@@ -11,6 +11,9 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import java.awt.event.ActionListener;
+import java.net.URL;
+import java.awt.event.ActionEvent;
 
 public class Login {
 
@@ -21,10 +24,12 @@ public class Login {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main( ) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+			        
+			        
 					Login window = new Login();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -56,6 +61,11 @@ public class Login {
 		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		//frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		//frame.setVisible(true);
