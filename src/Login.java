@@ -77,7 +77,8 @@ public class Login {
 				        	  flag=1;
 				        	  if (set.getString("Designation").equals("Informer")){
 				        		  
-				        		  System.out.println("hello");
+				        		  UserProf.main();
+				        		  frame.setVisible(true); 
 				        		  
 				        	  }
 				        	  else if(set.getString("Designation").equals("Admin")){
@@ -87,8 +88,7 @@ public class Login {
 				        	  }
 				        	  else if(set.getString("Designation").equals("Executive")) {
 				        		  
-				        		  UserProf.main();
-				        		  frame.setVisible(true);
+				        		  
 				        	  }
 				        	  else{
 				        		  JOptionPane.showMessageDialog(null, "You have not been assigned a designation. Try contacting the admin");
