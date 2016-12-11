@@ -60,16 +60,12 @@ public class Exec_view extends JFrame {
 		lbllocation.setBounds(54, 95, 80, 14);
 		contentPane.add(lbllocation);
 		
-		JLabel lblAge = new JLabel("Age :");
-		lblAge.setBounds(54, 127, 72, 14);
-		contentPane.add(lblAge);
-		
 		JLabel lblHairColour = new JLabel("Hair colour :");
-		lblHairColour.setBounds(51, 152, 83, 19);
+		lblHairColour.setBounds(51, 120, 83, 19);
 		contentPane.add(lblHairColour);
 		
 		JLabel lblHairType = new JLabel("Hair type:");
-		lblHairType.setBounds(54, 182, 65, 19);
+		lblHairType.setBounds(54, 150, 65, 19);
 		contentPane.add(lblHairType);
 		
 		JLabel lblcaseno = new JLabel();
@@ -80,16 +76,12 @@ public class Exec_view extends JFrame {
 		lblloc.setBounds(112, 97, 82, 19);
 		contentPane.add(lblloc);
 		
-		JLabel lblage = new JLabel("");
-		lblage.setBounds(132, 127, 83, 14);
-		contentPane.add(lblage);
-		
 		JLabel lblhairc = new JLabel("");
-		lblhairc.setBounds(132, 154, 72, 14);
+		lblhairc.setBounds(122, 125, 72, 14);
 		contentPane.add(lblhairc);
 		
 		JLabel lblhairt = new JLabel("");
-		lblhairt.setBounds(129, 184, 80, 19);
+		lblhairt.setBounds(112, 152, 80, 19);
 		contentPane.add(lblhairt);
 		
 		JLabel lblCrime = new JLabel("Crime:");
@@ -142,7 +134,7 @@ public class Exec_view extends JFrame {
 		contentPane.add(btnClose);
 		
 		JLabel lblPossibleCriminals = new JLabel("possible criminals:");
-		lblPossibleCriminals.setBounds(32, 212, 102, 34);
+		lblPossibleCriminals.setBounds(36, 212, 124, 34);
 		contentPane.add(lblPossibleCriminals);
 		
 		JTextArea textArea = new JTextArea();
@@ -164,7 +156,6 @@ public class Exec_view extends JFrame {
 						//model.addRow(new Object[] {caseno,location,crime});
 					   lblcaseno.setText(st.getString("case_no"));
 					   lblloc.setText(st.getString("police_dept"));
-					   lblage.setText(st.getString("age"));
 					   lblhairc.setText(st.getString("hair_colour"));
 					   lblhairt.setText(st.getString("hair_type"));
 					   lblcrimev.setText(st.getString("crime"));
@@ -185,10 +176,14 @@ java.sql.Connection conn1;
 			try {
 				conn1 = DriverManager.getConnection (Main.url,"clint","passkey1");
 				
-				   java.sql.PreparedStatement pst=conn1.prepareStatement("Select * from criminals where Sex=? and hair_colour=? and hair_type=?");
-				   pst.setString(1,lblSexv.getText().toLowerCase());
-				   pst.setString(2,lblhairc.getText().toLowerCase());
-				   pst.setString(3,lblhairt.getText().toLowerCase());
+				   java.sql.PreparedStatement pst=conn1.prepareStatement("Select * from criminals where Sex=? and (hair_colour=? or hair_type=?) and (facial_hair=? or skin_colour=? or height=?)");
+				   pst.setString(1,lblSexv.getText());
+				   pst.setString(2,lblhairc.getText());
+						  
+				   pst.setString(3,lblhairt.getText());
+				   pst.setString(4,labelfh.getText());
+				   pst.setString(5,lblskinc.getText());
+				   pst.setString(6,lblht.getText());
 				   ResultSet st1=pst.executeQuery();
 				   while(st1.next()){
 					   
@@ -198,7 +193,7 @@ java.sql.Connection conn1;
 					   	//String location=st.getString("police_dept");
 					   	//String crime=st.getString("crime");
 						//model.addRow(new Object[] {caseno,location,crime});
-					  textArea.append(st1.getString("Name").toLowerCase()+"\n");
+					  textArea.append(st1.getString("Name")+"\n");
 				   }
 				   
 				   conn1.close();
