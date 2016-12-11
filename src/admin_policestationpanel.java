@@ -29,7 +29,7 @@ public class admin_policestationpanel extends JPanel {
 	 * Create the panel.
 	 */
 	public admin_policestationpanel() {
-		
+		setSize(580,400);
 //		DefaultTableModel model;
 		model = new DefaultTableModel();
 	
@@ -170,28 +170,29 @@ public class admin_policestationpanel extends JPanel {
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(table, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(btnrefresh)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnAdd, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE))
-						.addComponent(table, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+							.addGap(8)
+							.addComponent(btnAdd, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(table, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE)
-					.addGap(26)
+					.addComponent(table, GroupLayout.PREFERRED_SIZE, 333, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnAdd)
+						.addComponent(btnrefresh)
 						.addComponent(btnDelete)
-						.addComponent(btnrefresh)))
+						.addComponent(btnAdd))
+					.addContainerGap(22, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 
