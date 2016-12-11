@@ -12,6 +12,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTabbedPane;
+import java.awt.Color;
 
 public class admin_welcome extends JFrame {
 
@@ -40,14 +41,17 @@ public class admin_welcome extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(260, 60, 700,550);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel lblYouAreLogged = new JLabel("You are logged in as Admin");
+		lblYouAreLogged.setForeground(Color.WHITE);
 		lblYouAreLogged.setHorizontalAlignment(SwingConstants.CENTER);
 		lblYouAreLogged.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		JButton btnLogout = new JButton("Logout");
+		btnLogout.setForeground(Color.RED);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		admin_policestationpanel PstnPanel = new admin_policestationpanel();
