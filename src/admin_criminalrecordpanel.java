@@ -16,9 +16,9 @@ import java.awt.event.ActionEvent;
 
 public class admin_criminalrecordpanel extends JPanel {
 	
-	public DefaultTableModel model;
-	 JTable table_1;
-	 public JButton btnRefresh;
+	public static DefaultTableModel model;
+	public static JTable table_1;
+	 public static JButton btnRefresh;
 	/**
 	 * Create the panel.
 	 */
@@ -29,6 +29,8 @@ public class admin_criminalrecordpanel extends JPanel {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				newcriminal newpage=new newcriminal();
+				newpage.setVisible(true);
 				
 			}
 		});
@@ -49,7 +51,7 @@ public class admin_criminalrecordpanel extends JPanel {
 						try {
 							
 							conn = DriverManager.getConnection (Main.url,"clint","passkey1");
-							  java.sql.PreparedStatement pst=conn.prepareStatement("Delete from criminals where rowno=? ");
+							  java.sql.PreparedStatement pst=conn.prepareStatement("Delete from criminals where CId=? ");
 					          pst.setString(1,String.valueOf(row));
 					       
 					          
@@ -80,21 +82,18 @@ public class admin_criminalrecordpanel extends JPanel {
 		 btnRefresh = new JButton("Refresh");
 		btnRefresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				java.sql.Connection conn;
-				
-				
 				try {
 					conn = DriverManager.getConnection (Main.url,"clint","passkey1");
 					
 					   java.sql.PreparedStatement pst=conn.prepareStatement("Select * from criminals");
 					  model.setRowCount(0);
-						model.addRow(new Object[]{"ID","Name","Sex","Age","Hair Colour","Skin Colour","Associates","Height"});
+						model.addRow(new Object[]{"ID","Name","Sex","Age","Hair Colour","Hair Type","Facial Hair","Skin Colour","Associates","Height"});
 					   ResultSet st=pst.executeQuery();
 					   while(st.next()){
 
 						   	
-							model.addRow(new Object[] {st.getString(1),st.getString(2),st.getString(3),st.getString(4),st.getString(5),st.getString(6),st.getString(7),st.getString(8)});
+							model.addRow(new Object[] {st.getString(1),st.getString(2),st.getString(3),st.getString(4),st.getString(5),st.getString(6),st.getString(7),st.getString(8),st.getString(9),st.getString(10)});
 						   
 					   }
 					   
@@ -103,9 +102,10 @@ public class admin_criminalrecordpanel extends JPanel {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			
-				
 			}
+				
+				
+			
 		});
 		
 		
@@ -117,6 +117,8 @@ public class admin_criminalrecordpanel extends JPanel {
 		model.addColumn("Sex");
 		model.addColumn("Age");
 		model.addColumn("Hair Colour");
+		model.addColumn("Hair Type");
+		model.addColumn("Facial Hair");
 		model.addColumn("Skin Colour");
 		model.addColumn("Associates");
 		model.addColumn("Height");
@@ -162,12 +164,12 @@ public class admin_criminalrecordpanel extends JPanel {
 			
 			   java.sql.PreparedStatement pst=conn.prepareStatement("Select * from criminals");
 			  
-				model.addRow(new Object[]{"ID","Name","Sex","Age","Hair Colour","Skin Colour","Associates","Height"});
+				model.addRow(new Object[]{"ID","Name","Sex","Age","Hair Colour","Hair Type","Facial Hair","Skin Colour","Associates","Height"});
 			   ResultSet st=pst.executeQuery();
 			   while(st.next()){
 
 				   	
-					model.addRow(new Object[] {st.getString(1),st.getString(2),st.getString(3),st.getString(4),st.getString(5),st.getString(6),st.getString(7),st.getString(8)});
+					model.addRow(new Object[] {st.getString(1),st.getString(2),st.getString(3),st.getString(4),st.getString(5),st.getString(6),st.getString(7),st.getString(8),st.getString(9),st.getString(10)});
 				   
 			   }
 			   
