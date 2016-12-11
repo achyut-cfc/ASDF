@@ -45,6 +45,7 @@ public class informer_report extends JFrame {
 	static String Location;
 	static int Height;
 	static int row = 0;
+	int check = 0;
 
 	/**
 	 * Launch the application.
@@ -67,7 +68,7 @@ public class informer_report extends JFrame {
 	 */
 	public informer_report() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(260, 60, 700, 550);
+		setBounds(260, 60, 743, 606);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -195,6 +196,7 @@ public class informer_report extends JFrame {
 			Skintone = "Fair";
 
 		}
+		
 
 		JRadioButton rdbtnTan = new JRadioButton("Tan");
 		btnGroupSkintone.add(rdbtnTan);
@@ -218,7 +220,7 @@ public class informer_report extends JFrame {
 
 		JComboBox HaircolourCombobox = new JComboBox();
 		HaircolourCombobox.setModel(new DefaultComboBoxModel(
-				new String[] { "Black", "Grey", "White", "Blonde", "Brown", "Red", "Coloured", "...." }));
+				new String[] { "" ,"Black", "Grey", "White", "Blonde", "Brown", "Red", "Coloured",  }));
 		Haircolour = (String) HaircolourCombobox.getSelectedItem();
 
 		JLabel lblNewLabel_1 = new JLabel("Type");
@@ -226,7 +228,7 @@ public class informer_report extends JFrame {
 
 		JComboBox HairstyleCombobox = new JComboBox();
 		HairstyleCombobox
-				.setModel(new DefaultComboBoxModel(new String[] { "Straight", "Curly", "Wavy", "Bald", "..." }));
+				.setModel(new DefaultComboBoxModel(new String[] { "", "Straight", "Curly", "Wavy", "Bald",  }));
 		HaircolourType = (String) HairstyleCombobox.getSelectedItem();
 
 		JLabel lblFacialHair = new JLabel("Facial Hair");
@@ -234,7 +236,7 @@ public class informer_report extends JFrame {
 
 		JComboBox FacialhairCombobox = new JComboBox();
 		FacialhairCombobox.setModel(new DefaultComboBoxModel(
-				new String[] { "Bearded", "Stubble", "Goatee", "Moustache only", "None", "..." }));
+				new String[] { "", "Bearded", "Stubble", "Goatee", "Moustache only", "None",  }));
 		FacialHair = (String) FacialhairCombobox.getSelectedItem();
 
 		textField = new JTextField();
@@ -250,7 +252,7 @@ public class informer_report extends JFrame {
 		lblLocation.setFont(new Font("Tahoma", Font.BOLD, 14));
 
 		JComboBox LocationComboBox = new JComboBox();
-		LocationComboBox.setModel(new DefaultComboBoxModel(new String[] { "Noida", "Delhi", "Dadri", "..." }));
+		LocationComboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Noida", "Delhi", "Dadri", "Other" }));
 		Location = (String) FacialhairCombobox.getSelectedItem();
 
 		JRadioButton rdbtnOther_1 = new JRadioButton("Other");
