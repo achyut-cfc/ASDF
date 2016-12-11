@@ -64,6 +64,12 @@ public class UserProf extends JFrame {
 		btnReportStatus.setBounds(221, 168, 99, 23);
 		
 		JButton btnBack = new JButton("Log Out");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Login.main();
+				setVisible(false);
+			}
+		});
 		btnBack.setBounds(211, 223, 113, 23);
 		contentPane.setLayout(null);
 		contentPane.add(btnBack);
