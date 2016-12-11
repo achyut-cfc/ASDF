@@ -58,7 +58,7 @@ public class informer_report extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblReportANew = new JLabel("Report a new crime");
-		lblReportANew.setForeground(Color.WHITE);
+		lblReportANew.setForeground(Color.RED);
 		lblReportANew.setHorizontalAlignment(SwingConstants.CENTER);
 		lblReportANew.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
@@ -76,6 +76,7 @@ public class informer_report extends JFrame {
 		//scrollPane.setColumnHeaderView(panel);
 		
 		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setForeground(Color.GREEN);
 		
 		JButton btnBack = new JButton("Back");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);

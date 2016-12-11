@@ -63,6 +63,8 @@ public class Login {
 		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.setBackground(Color.GREEN);
+		btnLogin.setForeground(Color.BLACK);
 		//frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
 		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		//frame.setVisible(true);

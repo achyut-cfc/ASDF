@@ -75,6 +75,8 @@ public class UserProf extends JFrame {
 		btnReportStatus.setBounds(170, 204, 191, 23);
 		
 		JButton btnBack = new JButton("Log Out");
+		btnBack.setBackground(Color.RED);
+		btnBack.setForeground(Color.BLACK);
 		btnBack.setBounds(434, 254, 113, 23);
 		contentPane.setLayout(null);
 		contentPane.add(btnBack);
