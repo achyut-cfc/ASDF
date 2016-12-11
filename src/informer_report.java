@@ -40,6 +40,7 @@ public class informer_report extends JFrame {
  String Haircolour;
  String HaircolourType;
  String FacialHair;
+ String Location;
  static int row= 0 ; 
 	/**
 	 * Launch the application.
@@ -268,6 +269,8 @@ public class informer_report extends JFrame {
 		lblLocation.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JComboBox LocationComboBox = new JComboBox();
+		LocationComboBox.setModel(new DefaultComboBoxModel(new String[] {"Noida", "Delhi", "Dadri",  "..."}));
+		Location = (String)FacialhairCombobox.getSelectedItem();
 		
 		JRadioButton rdbtnOther_1 = new JRadioButton("Other");
 		btnGroupType.add(rdbtnOther_1);
@@ -287,6 +290,7 @@ public class informer_report extends JFrame {
 	          pst.setString(5,this.Haircolour);
 	          pst.setString(6,this.HaircolourType);
 	          pst.setString(7,this.FacialHair);
+	          pst.setString(8,this.Location);
 	     
 	          pst.setString(1,String.valueOf(row));
 	          pst.executeUpdate();

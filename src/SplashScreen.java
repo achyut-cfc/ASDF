@@ -58,7 +58,7 @@ public class SplashScreen extends JWindow {
 //    
     Login.main();
    
-    
+    informer_report.main(args);
     
   }
 }
