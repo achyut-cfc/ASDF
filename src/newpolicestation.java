@@ -153,5 +153,8 @@ public class newpolicestation extends JFrame {
 					.addGap(21))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		contentPane.getRootPane().setDefaultButton(btnAdd);
+		btnAdd.requestFocus();
 	}
 }

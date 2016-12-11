@@ -321,5 +321,7 @@ public class informer_report extends JFrame {
 		);
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
+		
+		
 	}
 }

@@ -164,6 +164,9 @@ public class Login {
 					.addGap(50))
 		);
 		frame.getContentPane().setLayout(groupLayout);
+		
+		frame.getRootPane().setDefaultButton(btnLogin);
+		btnLogin.requestFocus();
 	}
 
 }
