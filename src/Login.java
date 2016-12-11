@@ -116,7 +116,7 @@ public class Login {
 		});
 	
 		txtUsername = new JTextField();
-		txtUsername.setForeground(Color.LIGHT_GRAY);
+		txtUsername.setForeground(Color.BLACK);
 		txtUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		txtUsername.setColumns(10);
 		GroupLayout gl_panel = new GroupLayout(panel);
