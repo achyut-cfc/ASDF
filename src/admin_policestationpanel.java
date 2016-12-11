@@ -23,7 +23,7 @@ import java.awt.event.ActionEvent;
 public class admin_policestationpanel extends JPanel {
 	private JTable table;
 	public DefaultTableModel model;
-	
+	public static JButton btnrefresh;
 	
 	/**
 	 * Create the panel.
@@ -104,17 +104,6 @@ public class admin_policestationpanel extends JPanel {
 			}
 		});
 	
-		/*DefaultTableModel model;
-		model = new DefaultTableModel();
-	
-		
-		model.addColumn("Location");
-		model.addColumn("Executives");
-		model.addColumn("Executives");
-		
-		table = new JTable(model);
-		table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-		model.addRow(new Object[]{"Location","Executives","Phone number"});*/
 		
 
         java.sql.Connection conn;
@@ -141,8 +130,8 @@ public class admin_policestationpanel extends JPanel {
 				e.printStackTrace();
 			}
 		
-		JButton btnRefresh = new JButton("Refresh");
-		btnRefresh.addActionListener(new ActionListener() {
+	btnrefresh = new JButton("Refresh");
+		btnrefresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				 java.sql.Connection conn;
@@ -185,7 +174,7 @@ public class admin_policestationpanel extends JPanel {
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-							.addComponent(btnRefresh)
+							.addComponent(btnrefresh)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
@@ -202,7 +191,7 @@ public class admin_policestationpanel extends JPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnAdd)
 						.addComponent(btnDelete)
-						.addComponent(btnRefresh)))
+						.addComponent(btnrefresh)))
 		);
 		setLayout(groupLayout);
 
