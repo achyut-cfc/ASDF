@@ -140,5 +140,8 @@ public class Login {
 					.addGap(24))
 		);
 		frmCrimeReportingSystem.getContentPane().setLayout(groupLayout);
+		
+		frmCrimeReportingSystem.getRootPane().setDefaultButton(btnLogin);
+		btnLogin.requestFocus();
 	}
 }
