@@ -67,8 +67,8 @@ public class admin_policestationpanel extends JPanel {
 //					System.out.println(row);
 					model.removeRow(row);
 					
-				
-					row+=1;
+				row=row+1;
+					
 			          java.sql.Connection conn;
 					try {
 						
