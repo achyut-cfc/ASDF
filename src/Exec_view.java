@@ -139,6 +139,10 @@ public class Exec_view extends JFrame {
 		});
 		btnClose.setBounds(242, 266, 89, 19);
 		contentPane.add(btnClose);
+		
+		JLabel lblposs = new JLabel("possible criminals");
+		lblposs.setBounds(80, 216, 124, 28);
+		contentPane.add(lblposs);
 		 java.sql.Connection conn;
 			
 			
@@ -166,6 +170,29 @@ public class Exec_view extends JFrame {
 				   }
 				   
 				   conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+java.sql.Connection conn1;
+			
+			
+			try {
+				conn1 = DriverManager.getConnection (Main.url,"clint","passkey1");
+				
+				   java.sql.PreparedStatement pst=conn1.prepareStatement("Select * from criminals where hair_colour=Black");
+				   ResultSet st=pst.executeQuery();
+				   while(st.next()){
+					   lblposs.setText(st.getString("Name"));
+
+					   //	String caseno=st.getString("case_no");
+					   	//String location=st.getString("police_dept");
+					   	//String crime=st.getString("crime");
+						//model.addRow(new Object[] {caseno,location,crime});
+					  // lblposs.setText
+				   }
+				   
+				   conn1.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
