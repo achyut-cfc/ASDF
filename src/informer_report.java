@@ -9,6 +9,10 @@ import javax.swing.JLabel;
 import java.awt.CardLayout;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
@@ -20,6 +24,8 @@ import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class informer_report extends JFrame {
 
@@ -28,7 +34,13 @@ public class informer_report extends JFrame {
 	private final ButtonGroup btnGroupGender = new ButtonGroup();
 	private final ButtonGroup btnGroupSkintone = new ButtonGroup();
 	private JTextField textField;
-
+ String Gender;
+ String  Skintone;
+ String Type;
+ String Haircolour;
+ String HaircolourType;
+ String FacialHair;
+ static int row= 0 ; 
 	/**
 	 * Launch the application.
 	 */
@@ -103,15 +115,33 @@ public class informer_report extends JFrame {
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Terrorist Attack");
 		btnGroupType.add(rdbtnNewRadioButton);
+		if( rdbtnNewRadioButton.isSelected())
+		{
+			 Type = "Terrorist Attack";
+		}
 		
 		JRadioButton rdbtnKidnap = new JRadioButton("Kidnap");
 		btnGroupType.add(rdbtnKidnap);
+		if( rdbtnKidnap.isSelected())
+		{
+			 Type = "Kidnap";
+		}
 		
 		JRadioButton rdbtnHiests = new JRadioButton("Hiests");
 		btnGroupType.add(rdbtnHiests);
+		if( rdbtnHiests.isSelected())
+		{
+			 Type = "Hiests";
+		}
+		
 		
 		JRadioButton rdbtnMurder = new JRadioButton("Murder");
 		btnGroupType.add(rdbtnMurder);
+		if( rdbtnMurder.isSelected())
+		{
+			Type = "Hiests";
+		}
+		
 		
 		JLabel lblSuspectDetails = new JLabel("Suspect Details");
 		lblSuspectDetails.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -120,6 +150,13 @@ public class informer_report extends JFrame {
 		lblHeight.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JSlider sliderheight = new JSlider();
+		sliderheight.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				
+			       
+			        int Height = sliderheight.getValue();
+			}
+		});
 		sliderheight.setToolTipText("120 cm is about 4 feet\r\n220 cm is over 7 feet");
 		sliderheight.setSnapToTicks(true);
 		sliderheight.setPaintLabels(true);
@@ -132,50 +169,91 @@ public class informer_report extends JFrame {
 		JLabel lblGender = new JLabel("Gender");
 		lblGender.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
+		
 		JRadioButton rdbtnMale = new JRadioButton("Male");
 		btnGroupGender.add(rdbtnMale);
+		if( rdbtnMale.isSelected() )
+		{  
+			Gender = "Male";
+		
+		} 
 		
 		JRadioButton rdbtnFemale = new JRadioButton("Female");
 		btnGroupGender.add(rdbtnFemale);
+		if( rdbtnFemale.isSelected() )
+		{  
+			Gender = "Female";
+		
+		} 
 		
 		JRadioButton rdbtnOther = new JRadioButton("Other");
 		btnGroupGender.add(rdbtnOther);
+		if( rdbtnOther.isSelected() )
+		{  
+			Gender= "Other";
+		
+		} 
 		
 		JLabel lblSkintone = new JLabel("Skintone");
 		lblSkintone.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Pale");
 		btnGroupSkintone.add(rdbtnNewRadioButton_1);
+		if( rdbtnNewRadioButton_1.isSelected() )
+		{  
+			Skintone = "Pale";
+		
+		} 
 		
 		JRadioButton rdbtnFair = new JRadioButton("Fair");
 		btnGroupSkintone.add(rdbtnFair);
+		if( rdbtnFair.isSelected() )
+		{  
+			Skintone = "Fair";
+		
+		} 
 		
 		JRadioButton rdbtnTan = new JRadioButton("Tan");
 		btnGroupSkintone.add(rdbtnTan);
+		if( rdbtnTan.isSelected() )
+		{  
+			Skintone = "Tan";
+		
+		} 
 		
 		JRadioButton rdbtnDark = new JRadioButton("Dark");
 		btnGroupSkintone.add(rdbtnDark);
+		if( rdbtnDark.isSelected() )
+		{  
+			Skintone = "Dark";
+		
+		} 
 		
 		JLabel lblHair = new JLabel("Hair");
 		lblHair.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		
 		
 		JLabel lblColour = new JLabel("Colour");
 		lblColour.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JComboBox HaircolourCombobox = new JComboBox();
 		HaircolourCombobox.setModel(new DefaultComboBoxModel(new String[] {"Black", "Grey", "White", "Blonde", "Brown", "Red", "Coloured", "...."}));
+		Haircolour = (String)HaircolourCombobox.getSelectedItem();
 		
 		JLabel lblNewLabel_1 = new JLabel("Type");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JComboBox HairstyleCombobox = new JComboBox();
 		HairstyleCombobox.setModel(new DefaultComboBoxModel(new String[] {"Straight", "Curly", "Wavy", "Bald", "..."}));
+		HaircolourType = (String)HairstyleCombobox.getSelectedItem();
 		
 		JLabel lblFacialHair = new JLabel("Facial Hair");
 		lblFacialHair.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
+		
 		JComboBox FacialhairCombobox = new JComboBox();
 		FacialhairCombobox.setModel(new DefaultComboBoxModel(new String[] {"Bearded", "Stubble", "Goatee", "Moustache only", "None", "..."}));
+		FacialHair = (String)FacialhairCombobox.getSelectedItem();
 		
 		textField = new JTextField();
 		textField.setToolTipText("Enter Tags like Names ,Places ,Associates, etc");
@@ -193,6 +271,33 @@ public class informer_report extends JFrame {
 		
 		JRadioButton rdbtnOther_1 = new JRadioButton("Other");
 		btnGroupType.add(rdbtnOther_1);
+		
+		java.sql.Connection conn;
+		
+
+		try {
+			
+			conn = DriverManager.getConnection (Main.url,"clint","passkey1");
+				
+				row+=1;
+			  java.sql.PreparedStatement pst=conn.prepareStatement("Insert into suspects values(?,?,?,?,?,?,?)");
+	          pst.setString(2,this.Type);
+	          pst.setString(3,this.Gender);
+	          pst.setString(4,this.Skintone);
+	          pst.setString(5,this.Haircolour);
+	          pst.setString(6,this.HaircolourType);
+	          pst.setString(7,this.FacialHair);
+	     
+	          pst.setString(1,String.valueOf(row));
+	          pst.executeUpdate();
+	          conn.close();
+			  
+			 
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
