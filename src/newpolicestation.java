@@ -91,6 +91,7 @@ public class newpolicestation extends JFrame {
 				newphonenumber=textField_2.getText();
 				
 				addstation();
+				admin_policestationpanel.btnrefresh.doClick();
 				setVisible(false);
 				
 			}
