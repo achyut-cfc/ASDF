@@ -68,7 +68,7 @@ public class informer_report extends JFrame {
 	 */
 	public informer_report() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(260, 60, 743, 606);
+		setBounds(260, 60, 779, 734);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
