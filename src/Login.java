@@ -88,11 +88,9 @@ public class Login {
 				        	  }
 				        	  else if(set.getString("Designation").equals("Executive")) {
 				        		  
-<<<<<<< HEAD
-				        		  UserProf.main();
-=======
+
 				        		  Executive_home.main();
->>>>>>> branch 'master' of https://github.com/achyut-cfc/ASDF.git
+//github.com/achyut-cfc/ASDF.git
 				        		  frame.setVisible(false);
 				        	  }
 				        	  else{
