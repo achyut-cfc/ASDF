@@ -7,6 +7,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Color;
 
 public class informer_checkstatus_panel extends JPanel {
 
@@ -14,24 +15,30 @@ public class informer_checkstatus_panel extends JPanel {
 	 * Create the panel.
 	 */
 	public informer_checkstatus_panel() {
+		setBackground(Color.BLACK);
 		
 		JLabel lblCaseID = new JLabel("Case ID");
+		lblCaseID.setForeground(Color.WHITE);
 		lblCaseID.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblCaseID.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblAcknowledgement = new JLabel("Acknowledgement Status");
+		lblAcknowledgement.setForeground(Color.WHITE);
 		
 		JTextArea txtAcknowledgement = new JTextArea();
 		
 		JLabel lblNewLabel_1 = new JLabel("Status");
+		lblNewLabel_1.setForeground(Color.WHITE);
 		
 		JTextArea txtStatus = new JTextArea();
 		
 		JLabel lblPoliceStationAssigned = new JLabel("Police Station Assigned");
+		lblPoliceStationAssigned.setForeground(Color.WHITE);
 		
 		JTextArea txtP = new JTextArea();
 		
 		JLabel lblExecutiveAssigned = new JLabel("Executive Assigned");
+		lblExecutiveAssigned.setForeground(Color.WHITE);
 		
 		JTextArea textArea = new JTextArea();
 		GroupLayout groupLayout = new GroupLayout(this);
