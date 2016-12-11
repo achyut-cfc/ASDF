@@ -57,7 +57,6 @@ public class SplashScreen extends JWindow {
     // But, since this is only a test...
     splash.showSplash ();
     Thread.sleep(100);
-    // Login w = new Login();
     w.main();
     //UserProf.main(args);
     
