@@ -42,7 +42,7 @@ public class informer_checkstatus extends JFrame {
 	 */
 	public informer_checkstatus() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(260, 60, 700,550);
+		setBounds(260, 60, 773,592);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -74,6 +74,11 @@ public class informer_checkstatus extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)

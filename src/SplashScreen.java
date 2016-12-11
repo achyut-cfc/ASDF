@@ -10,8 +10,7 @@ public class SplashScreen extends JWindow {
     duration = d;
   }
 
-  // A simple little method to show a title screen in the center
-  // of the screen for the amount of time given in the constructor
+ 
   public void showSplash() throws MalformedURLException {
     JPanel content = (JPanel)getContentPane();
     content.setBackground(Color.white);
@@ -37,7 +36,7 @@ public class SplashScreen extends JWindow {
     // Display it
     setVisible(true);
 
-    // Wait a little while, maybe while loading resources
+   
     try { Thread.sleep(duration); } catch (Exception e) {}
 
     setVisible(false);
@@ -49,7 +48,7 @@ public class SplashScreen extends JWindow {
   }
 
   public static void main(String[] args) throws MalformedURLException, InterruptedException {
-    // Throw a nice little title page up on the screen first
+   
   SplashScreen splash = new SplashScreen(4300);
 //    
 //    
@@ -58,7 +57,7 @@ public class SplashScreen extends JWindow {
 //    
     Login.main();
    
-    informer_report.main(args);
+   
     
   }
 }
