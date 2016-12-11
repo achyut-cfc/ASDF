@@ -22,32 +22,99 @@ import java.awt.event.ActionEvent;
 
 public class admin_policestationpanel extends JPanel {
 	private JTable table;
-
+	public DefaultTableModel model;
+	
+	
 	/**
 	 * Create the panel.
 	 */
 	public admin_policestationpanel() {
 		
-		JButton btnAdd = new JButton("Add");
+//		DefaultTableModel model;
+		model = new DefaultTableModel();
+	
 		
-		JButton btnEdit = new JButton("Edit");
+		model.addColumn("Location");
+		model.addColumn("Executives");
+		model.addColumn("Executives");
+		
+		table = new JTable(model);
+		table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+		model.addRow(new Object[]{"Location","Executives","Phone number"});
+		
+		JButton btnAdd = new JButton("Add");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				newpolicestation station=new newpolicestation();
+				station.row=model.getRowCount();
+				station.setVisible(true);
+			
+			   
+			}
+			
+		
+		});
 		
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				   int[] selection = table.getSelectedRows();
+				 int row;
+				if (( row=table.getSelectedRow()) > 0) {
+			            
+					
+//					System.out.println(row);
+					model.removeRow(row);
+					
+				
+					row+=1;
+			          java.sql.Connection conn;
+					try {
+						
+						conn = DriverManager.getConnection (Main.url,"clint","passkey1");
+						  java.sql.PreparedStatement pst=conn.prepareStatement("Delete from police_dept where rowno=? ");
+				          pst.setString(1,String.valueOf(row));
+				       
+				          
+				          pst.executeUpdate();
+				          
+				        
+				         
+				  
+				          for(int  r=row;r<=model.getRowCount();r++){
+				        	  
+				        	    
+					          pst=conn.prepareStatement("Update police_dept set rowno=? where rowno=? ");
+					          
+				        	  pst.setString(1,String.valueOf(r));
+				        	  pst.setString(2, String.valueOf(r+1));
+				        	  pst.executeUpdate();
+				        	  
+				          }
+				          conn.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				
+			        
+			        }
 				
 			}
 		});
-		DefaultTableModel model;
+	
+		/*DefaultTableModel model;
 		model = new DefaultTableModel();
+	
+		
 		model.addColumn("Location");
 		model.addColumn("Executives");
-		model.addColumn("Phone number");
+		model.addColumn("Executives");
 		
 		table = new JTable(model);
-		model.addRow(new Object[]{"Location","Executives","Phone number"});
+		table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+		model.addRow(new Object[]{"Location","Executives","Phone number"});*/
 		
 
         java.sql.Connection conn;
@@ -74,23 +141,56 @@ public class admin_policestationpanel extends JPanel {
 				e.printStackTrace();
 			}
 		
+		JButton btnRefresh = new JButton("Refresh");
+		btnRefresh.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				 java.sql.Connection conn;
+					
+					
+					try {
+						conn = DriverManager.getConnection (Main.url,"clint","passkey1");
+						
+						   java.sql.PreparedStatement pst=conn.prepareStatement("Select * from police_dept");
+						   ResultSet st=pst.executeQuery();
+						   
+						  model.setRowCount(0);
+						  model.addRow(new Object[]{"Location","Executives","Phone number"});
+						   while(st.next()){
+
+							   	String location=st.getString("location");
+							   	String executives=st.getString("executives");
+							   	String phno=st.getString("ph_no");
+							   	
+								model.addRow(new Object[] {location,executives,phno});
+							   
+							   
+						   }
+						   
+						   conn.close();
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				
+			}
+		});
+		
 		
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(223)
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(btnRefresh)
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnDelete, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(btnEdit, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
-							.addGap(6)
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(btnAdd, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(table, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)))
+						.addComponent(table, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
@@ -99,10 +199,10 @@ public class admin_policestationpanel extends JPanel {
 					.addContainerGap()
 					.addComponent(table, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE)
 					.addGap(26)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnAdd)
 						.addComponent(btnDelete)
-						.addComponent(btnEdit)
-						.addComponent(btnAdd)))
+						.addComponent(btnRefresh)))
 		);
 		setLayout(groupLayout);
 

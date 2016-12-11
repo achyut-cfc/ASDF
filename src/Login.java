@@ -95,9 +95,10 @@ public class Login {
 				        		  JOptionPane.showMessageDialog(null, "You have not been assigned a designation. Try contacting the admin");
 				        	  }
 				        	  
-				        	  conn.close();
+				        	  
 				        	  
 				          }
+				          conn.close();
 				          if (flag==0){
 				        	  JOptionPane.showMessageDialog(null, "User not found");
 				          }
@@ -105,6 +106,7 @@ public class Login {
 				           
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
+//						JOptionPane.showMessageDialog(null, "Connection failed"+e);
 						e.printStackTrace();
 					}
 				
