@@ -20,6 +20,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
+import java.awt.Color;
 
 public class informer_report extends JFrame {
 
@@ -52,15 +53,18 @@ public class informer_report extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(260, 60, 700,550);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel lblReportANew = new JLabel("Report a new crime");
+		lblReportANew.setForeground(Color.WHITE);
 		lblReportANew.setHorizontalAlignment(SwingConstants.CENTER);
 		lblReportANew.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		
 		formpanel panel = new formpanel();
+		panel.setBackground(Color.BLACK);
 	
 		
 		
@@ -99,27 +103,40 @@ public class informer_report extends JFrame {
 		
 		
 		JLabel lblType = new JLabel("Type");
+		lblType.setForeground(Color.WHITE);
 		lblType.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Terrorist Attack");
+		rdbtnNewRadioButton.setBackground(Color.BLACK);
+		rdbtnNewRadioButton.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnNewRadioButton);
 		
 		JRadioButton rdbtnKidnap = new JRadioButton("Kidnap");
+		rdbtnKidnap.setBackground(Color.BLACK);
+		rdbtnKidnap.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnKidnap);
 		
 		JRadioButton rdbtnHiests = new JRadioButton("Hiests");
+		rdbtnHiests.setBackground(Color.BLACK);
+		rdbtnHiests.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnHiests);
 		
 		JRadioButton rdbtnMurder = new JRadioButton("Murder");
+		rdbtnMurder.setBackground(Color.BLACK);
+		rdbtnMurder.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnMurder);
 		
 		JLabel lblSuspectDetails = new JLabel("Suspect Details");
+		lblSuspectDetails.setForeground(Color.WHITE);
 		lblSuspectDetails.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		JLabel lblHeight = new JLabel("Height (Approx in cm)");
+		lblHeight.setForeground(Color.WHITE);
 		lblHeight.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JSlider sliderheight = new JSlider();
+		sliderheight.setBackground(Color.BLACK);
+		sliderheight.setForeground(Color.WHITE);
 		sliderheight.setToolTipText("120 cm is about 4 feet\r\n220 cm is over 7 feet");
 		sliderheight.setSnapToTicks(true);
 		sliderheight.setPaintLabels(true);
@@ -130,30 +147,46 @@ public class informer_report extends JFrame {
 		sliderheight.setMinimum(120);
 		
 		JLabel lblGender = new JLabel("Gender");
+		lblGender.setForeground(Color.WHITE);
 		lblGender.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JRadioButton rdbtnMale = new JRadioButton("Male");
+		rdbtnMale.setBackground(Color.BLACK);
+		rdbtnMale.setForeground(Color.WHITE);
 		btnGroupGender.add(rdbtnMale);
 		
 		JRadioButton rdbtnFemale = new JRadioButton("Female");
+		rdbtnFemale.setBackground(Color.BLACK);
+		rdbtnFemale.setForeground(Color.WHITE);
 		btnGroupGender.add(rdbtnFemale);
 		
 		JRadioButton rdbtnOther = new JRadioButton("Other");
+		rdbtnOther.setBackground(Color.BLACK);
+		rdbtnOther.setForeground(Color.WHITE);
 		btnGroupGender.add(rdbtnOther);
 		
 		JLabel lblSkintone = new JLabel("Skintone");
+		lblSkintone.setForeground(Color.WHITE);
 		lblSkintone.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Pale");
+		rdbtnNewRadioButton_1.setBackground(Color.BLACK);
+		rdbtnNewRadioButton_1.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnNewRadioButton_1);
 		
 		JRadioButton rdbtnFair = new JRadioButton("Fair");
+		rdbtnFair.setBackground(Color.BLACK);
+		rdbtnFair.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnFair);
 		
 		JRadioButton rdbtnTan = new JRadioButton("Tan");
+		rdbtnTan.setBackground(Color.BLACK);
+		rdbtnTan.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnTan);
 		
 		JRadioButton rdbtnDark = new JRadioButton("Dark");
+		rdbtnDark.setBackground(Color.BLACK);
+		rdbtnDark.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnDark);
 		
 		JLabel lblHair = new JLabel("Hair");
@@ -187,11 +220,14 @@ public class informer_report extends JFrame {
 		lblOtherDetails.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JLabel lblLocation = new JLabel("Location");
+		lblLocation.setForeground(Color.WHITE);
 		lblLocation.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JComboBox LocationComboBox = new JComboBox();
 		
 		JRadioButton rdbtnOther_1 = new JRadioButton("Other");
+		rdbtnOther_1.setBackground(Color.BLACK);
+		rdbtnOther_1.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnOther_1);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
