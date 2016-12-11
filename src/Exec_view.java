@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
 
 public class Exec_view extends JFrame {
 
@@ -137,12 +138,16 @@ public class Exec_view extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnClose.setBounds(242, 266, 89, 19);
+		btnClose.setBounds(242, 343, 89, 19);
 		contentPane.add(btnClose);
 		
-		JLabel lblposs = new JLabel("possible criminals");
-		lblposs.setBounds(80, 216, 124, 28);
-		contentPane.add(lblposs);
+		JLabel lblPossibleCriminals = new JLabel("possible criminals:");
+		lblPossibleCriminals.setBounds(32, 212, 102, 34);
+		contentPane.add(lblPossibleCriminals);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(190, 217, 141, 115);
+		contentPane.add(textArea);
 		 java.sql.Connection conn;
 			
 			
@@ -176,20 +181,24 @@ public class Exec_view extends JFrame {
 			}
 java.sql.Connection conn1;
 			
-			
+//System.out.println(lblhairc.getText());
 			try {
 				conn1 = DriverManager.getConnection (Main.url,"clint","passkey1");
 				
-				   java.sql.PreparedStatement pst=conn1.prepareStatement("Select * from criminals where hair_colour=Black");
-				   ResultSet st=pst.executeQuery();
-				   while(st.next()){
-					   lblposs.setText(st.getString("Name"));
+				   java.sql.PreparedStatement pst=conn1.prepareStatement("Select * from criminals where Sex=? and hair_colour=? and hair_type=?");
+				   pst.setString(1,lblSexv.getText().toLowerCase());
+				   pst.setString(2,lblhairc.getText().toLowerCase());
+				   pst.setString(3,lblhairt.getText().toLowerCase());
+				   ResultSet st1=pst.executeQuery();
+				   while(st1.next()){
+					   
+					   //System.out.println(lblhairc.getText());
 
 					   //	String caseno=st.getString("case_no");
 					   	//String location=st.getString("police_dept");
 					   	//String crime=st.getString("crime");
 						//model.addRow(new Object[] {caseno,location,crime});
-					  // lblposs.setText
+					  textArea.append(st1.getString("Name").toLowerCase()+"\n");
 				   }
 				   
 				   conn1.close();
