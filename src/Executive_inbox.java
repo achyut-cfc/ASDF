@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Executive_inbox extends JFrame {
-	JTable table;
+	static JTable table;
 	public DefaultTableModel model;
 	private JPanel contentPane;
 	private JTable table_1;
@@ -72,6 +72,12 @@ public class Executive_inbox extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnView = new JButton("VIEW");
+		btnView.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Exec_view.main();
+				
+			}
+		});
 		btnView.setBounds(387, 369, 89, 23);
 		contentPane.add(btnView);
 		
@@ -116,6 +122,7 @@ public class Executive_inbox extends JFrame {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		
 	
 		

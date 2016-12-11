@@ -50,7 +50,7 @@ public class Executive_home extends JFrame {
 		});
 		btnViewInbox.setFont(new Font("Sitka Small", Font.BOLD, 14));
 		btnViewInbox.setBackground(Color.LIGHT_GRAY);
-		btnViewInbox.setBounds(281, 381, 127, 23);
+		btnViewInbox.setBounds(281, 330, 145, 23);
 		contentPane.add(btnViewInbox);
 		
 		JButton btnLogOut = new JButton("LOG OUT");
@@ -63,7 +63,7 @@ public class Executive_home extends JFrame {
 		});
 		btnLogOut.setFont(new Font("Sitka Display", Font.BOLD, 13));
 		btnLogOut.setBackground(Color.LIGHT_GRAY);
-		btnLogOut.setBounds(298, 426, 89, 23);
+		btnLogOut.setBounds(305, 391, 89, 23);
 		contentPane.add(btnLogOut);
 	
 		JLabel lblLoggedInAs = new JLabel("Logged In As:");
@@ -78,8 +78,9 @@ public class Executive_home extends JFrame {
 		contentPane.add(lblWelcome);
 		
 		JLabel lbllogdetails = new JLabel(Login.txtUsername.getText());
+		lbllogdetails.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbllogdetails.setHorizontalAlignment(SwingConstants.CENTER);
-		lbllogdetails.setBounds(250, 247, 176, 51);
+		lbllogdetails.setBounds(250, 233, 176, 51);
 		contentPane.add(lbllogdetails);
 	}
 }
