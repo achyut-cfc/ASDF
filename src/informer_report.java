@@ -277,17 +277,16 @@ public class informer_report extends JFrame {
 					row++;
 					
 					java.sql.PreparedStatement pst = conn
-							.prepareStatement("insert into suspects values(?,?,?,?,?,?,?,?,?,?)");
+							.prepareStatement("insert into suspects values(?,?,?,?,?,?,?,?,?)");
 					pst.setString(1, String.valueOf(row));
 					pst.setString(2, informer_report.Location);
 					pst.setString(3, informer_report.Gender);
-					pst.setString(4, "23");
-					pst.setString(5, informer_report.Haircolour);
-					pst.setString(6, informer_report.HaircolourType);
-					pst.setString(7, informer_report.FacialHair);
-					pst.setString(8, informer_report.Skintone);
-					pst.setString(9, String.valueOf(informer_report.Height));
-					pst.setString(10, informer_report.Type);
+					pst.setString(4, informer_report.Haircolour);
+					pst.setString(5, informer_report.HaircolourType);
+					pst.setString(6, informer_report.FacialHair);
+					pst.setString(7, informer_report.Skintone);
+					pst.setString(8, String.valueOf(informer_report.Height));
+					pst.setString(9, informer_report.Type);
 
 					// pst.setString(1,String.valueOf(row));
 					pst.executeUpdate();
