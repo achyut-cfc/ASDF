@@ -77,7 +77,8 @@ public class Login {
 				        	  flag=1;
 				        	  if (set.getString("Designation").equals("Informer")){
 				        		  
-				        		  System.out.println("hello");
+				        		  UserProf.main();
+				        		  frame.setVisible(false); 
 				        		  
 				        	  }
 				        	  else if(set.getString("Designation").equals("Admin")){
@@ -87,16 +88,21 @@ public class Login {
 				        	  }
 				        	  else if(set.getString("Designation").equals("Executive")) {
 				        		  
+<<<<<<< HEAD
 				        		  UserProf.main();
+=======
+				        		  Executive_home.main();
+>>>>>>> branch 'master' of https://github.com/achyut-cfc/ASDF.git
 				        		  frame.setVisible(false);
 				        	  }
 				        	  else{
 				        		  JOptionPane.showMessageDialog(null, "You have not been assigned a designation. Try contacting the admin");
 				        	  }
 				        	  
-				        	  conn.close();
+				        	  
 				        	  
 				          }
+				          conn.close();
 				          if (flag==0){
 				        	  JOptionPane.showMessageDialog(null, "User not found");
 				          }
@@ -104,6 +110,7 @@ public class Login {
 				           
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
+//						JOptionPane.showMessageDialog(null, "Connection failed"+e);
 						e.printStackTrace();
 					}
 				
