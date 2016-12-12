@@ -24,10 +24,14 @@ import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
+
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import java.awt.Color;
+
 
 public class informer_report extends JFrame {
 
@@ -70,19 +74,30 @@ public class informer_report extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(260, 60, 779, 734);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
 		JLabel lblReportANew = new JLabel("Report a new crime");
+		lblReportANew.setForeground(Color.RED);
 		lblReportANew.setHorizontalAlignment(SwingConstants.CENTER);
 		lblReportANew.setFont(new Font("Tahoma", Font.BOLD, 14));
 
-		formpanel panel = new formpanel();
+		JPanel panel = new JPanel();
+
+
+
+		panel.setBackground(Color.BLACK);
+	
+		
+		
+		
 
 		JScrollPane scrollPane = new JScrollPane(panel);
 		panel.setAutoscrolls(true);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
 		// scrollPane.setColumnHeaderView(panel);
 
 		/*
@@ -107,46 +122,92 @@ public class informer_report extends JFrame {
 		 * .addComponent(btnBack) .addComponent(btnSubmit))) );
 		 */
 
+
+		//scrollPane.setColumnHeaderView(panel);
+		
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setForeground(Color.GREEN);
+		
+		JButton btnBack = new JButton("Back");
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addComponent(lblReportANew, GroupLayout.PREFERRED_SIZE, 664, GroupLayout.PREFERRED_SIZE)
+				.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 674, GroupLayout.PREFERRED_SIZE)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(520)
+					.addComponent(btnBack)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnSubmit))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(lblReportANew, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 420, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnBack)
+						.addComponent(btnSubmit)))
+		);
+		
+		
 		JLabel lblType = new JLabel("Type");
+		lblType.setForeground(Color.WHITE);
 		lblType.setFont(new Font("Tahoma", Font.BOLD, 15));
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Terrorist Attack");
+		rdbtnNewRadioButton.setBackground(Color.BLACK);
+		rdbtnNewRadioButton.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnNewRadioButton);
 //		if (rdbtnNewRadioButton.isSelected()) {
 //			Type = "Terrorist Attack";
 //		}
 
 		JRadioButton rdbtnKidnap = new JRadioButton("Kidnap");
+		rdbtnKidnap.setBackground(Color.BLACK);
+		rdbtnKidnap.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnKidnap);
 //		if (rdbtnKidnap.isSelected()) {
 //			Type = "Kidnap";
 //		}
 
 		JRadioButton rdbtnHiests = new JRadioButton("Hiests");
+		rdbtnHiests.setBackground(Color.BLACK);
+		rdbtnHiests.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnHiests);
 //		if (rdbtnHiests.isSelected()) {
 //			Type = "Hiests";
 //		}
 
 		JRadioButton rdbtnMurder = new JRadioButton("Murder");
+		rdbtnMurder.setBackground(Color.BLACK);
+		rdbtnMurder.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnMurder);
 //		if (rdbtnMurder.isSelected()) {
 //			Type = "Hiests";
 //		}
 
 		JLabel lblSuspectDetails = new JLabel("Suspect Details");
+		lblSuspectDetails.setForeground(Color.WHITE);
 		lblSuspectDetails.setFont(new Font("Tahoma", Font.BOLD, 15));
 
 		JLabel lblHeight = new JLabel("Height (Approx in cm)");
+		lblHeight.setForeground(Color.WHITE);
 		lblHeight.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		JSlider sliderheight = new JSlider();
+
 		sliderheight.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 
 				Height = sliderheight.getValue();
 			}
 		});
+
+		sliderheight.setBackground(Color.BLACK);
+		sliderheight.setForeground(Color.WHITE);
 		sliderheight.setToolTipText("120 cm is about 4 feet\r\n220 cm is over 7 feet");
 		sliderheight.setSnapToTicks(true);
 		sliderheight.setPaintLabels(true);
@@ -157,9 +218,12 @@ public class informer_report extends JFrame {
 		sliderheight.setMinimum(120);
 
 		JLabel lblGender = new JLabel("Gender");
+		lblGender.setForeground(Color.WHITE);
 		lblGender.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		JRadioButton rdbtnMale = new JRadioButton("Male");
+		rdbtnMale.setBackground(Color.BLACK);
+		rdbtnMale.setForeground(Color.WHITE);
 		btnGroupGender.add(rdbtnMale);
 //		if (rdbtnMale.isSelected()) {
 //			Gender = "Male";
@@ -167,6 +231,8 @@ public class informer_report extends JFrame {
 //		}
 
 		JRadioButton rdbtnFemale = new JRadioButton("Female");
+		rdbtnFemale.setBackground(Color.BLACK);
+		rdbtnFemale.setForeground(Color.WHITE);
 		btnGroupGender.add(rdbtnFemale);
 //		if (rdbtnFemale.isSelected()) {
 //			Gender = "Female";
@@ -174,6 +240,8 @@ public class informer_report extends JFrame {
 //		}
 
 		JRadioButton rdbtnOther = new JRadioButton("Other");
+		rdbtnOther.setBackground(Color.BLACK);
+		rdbtnOther.setForeground(Color.WHITE);
 		btnGroupGender.add(rdbtnOther);
 //		if (rdbtnOther.isSelected()) {
 //			Gender = "Other";
@@ -181,9 +249,12 @@ public class informer_report extends JFrame {
 //		}
 
 		JLabel lblSkintone = new JLabel("Skintone");
+		lblSkintone.setForeground(Color.WHITE);
 		lblSkintone.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Pale");
+		rdbtnNewRadioButton_1.setBackground(Color.BLACK);
+		rdbtnNewRadioButton_1.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnNewRadioButton_1);
 //		if (rdbtnNewRadioButton_1.isSelected()) {
 //			Skintone = "Pale";
@@ -191,6 +262,8 @@ public class informer_report extends JFrame {
 //		}
 
 		JRadioButton rdbtnFair = new JRadioButton("Fair");
+		rdbtnFair.setBackground(Color.BLACK);
+		rdbtnFair.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnFair);
 //		if (rdbtnFair.isSelected()) {
 //			Skintone = "Fair";
@@ -199,6 +272,8 @@ public class informer_report extends JFrame {
 		
 
 		JRadioButton rdbtnTan = new JRadioButton("Tan");
+		rdbtnTan.setBackground(Color.BLACK);
+		rdbtnTan.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnTan);
 //		if (rdbtnTan.isSelected()) {
 //			Skintone = "Tan";
@@ -206,6 +281,8 @@ public class informer_report extends JFrame {
 //		}
 
 		JRadioButton rdbtnDark = new JRadioButton("Dark");
+		rdbtnDark.setBackground(Color.BLACK);
+		rdbtnDark.setForeground(Color.WHITE);
 		btnGroupSkintone.add(rdbtnDark);
 //		if (rdbtnDark.isSelected()) {
 //			Skintone = "Dark";
@@ -249,6 +326,7 @@ public class informer_report extends JFrame {
 		lblOtherDetails.setFont(new Font("Tahoma", Font.BOLD, 14));
 
 		JLabel lblLocation = new JLabel("Location");
+		lblLocation.setForeground(Color.WHITE);
 		lblLocation.setFont(new Font("Tahoma", Font.BOLD, 14));
 
 		JComboBox LocationComboBox = new JComboBox();
@@ -256,9 +334,11 @@ public class informer_report extends JFrame {
 //		Location = (String) FacialhairCombobox.getSelectedItem();
 
 		JRadioButton rdbtnOther_1 = new JRadioButton("Other");
+		rdbtnOther_1.setBackground(Color.BLACK);
+		rdbtnOther_1.setForeground(Color.WHITE);
 		btnGroupType.add(rdbtnOther_1);
 
-		JButton btnSubmit = new JButton("Submit");
+//		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -354,7 +434,7 @@ public class informer_report extends JFrame {
 			}
 		});
 
-		JButton btnBack = new JButton("Back");
+		//JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UserProf a = new UserProf();
@@ -363,7 +443,7 @@ a.setVisible(true);
    setVisible(false);
 			}
 		});
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		//GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addComponent(lblReportANew, GroupLayout.PREFERRED_SIZE, 664, GroupLayout.PREFERRED_SIZE)

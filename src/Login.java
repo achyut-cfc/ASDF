@@ -2,10 +2,12 @@ import java.awt.EventQueue;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
@@ -24,9 +26,20 @@ import java.awt.event.ActionEvent;
 
 public class Login {
 
+
 	JFrame frame;
 	static JTextField txtUsername;
+
+	
+
+
 	private JPasswordField passwordField;
+
+
+	/**
+	 * Launch the application.
+	 */
+	
 
 
 	 // Create the application.
@@ -47,9 +60,18 @@ public class Login {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+
 		frame = new JFrame();
 		frame.setBounds(100, 100, 842, 468);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\kinjolnath\\Desktop\\logo2.jpg"));
+		frame.setTitle("Crime Reporting System");
+		frame.getContentPane().setBackground(Color.BLACK);
+		frame.setBounds(100, 100, 842, 468);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		
 		JPanel panel = new JPanel();
 		
@@ -90,7 +112,7 @@ public class Login {
 				        		  
 
 				        		  Executive_home.main();
-//github.com/achyut-cfc/ASDF.git
+
 				        		  frame.setVisible(false);
 				        	  }
 				        	  else{
@@ -115,6 +137,15 @@ public class Login {
 			}
 		});
 	
+
+		btnLogin.setBackground(Color.GREEN);
+		btnLogin.setForeground(Color.BLACK);
+		//frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+		//frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		//frame.setVisible(true);
+		//frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+		
+
 		txtUsername = new JTextField();
 		txtUsername.setForeground(Color.BLACK);
 		txtUsername.setHorizontalAlignment(SwingConstants.CENTER);
@@ -147,7 +178,14 @@ public class Login {
 					.addGap(27))
 		);
 		panel.setLayout(gl_panel);
+
+		
+
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("./src/logo2.jpg"));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
@@ -162,9 +200,12 @@ public class Login {
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addGap(50))
 		);
+
 		frame.getContentPane().setLayout(groupLayout);
 		
 		frame.getRootPane().setDefaultButton(btnLogin);
+
+		
 		btnLogin.requestFocus();
 	}
 
