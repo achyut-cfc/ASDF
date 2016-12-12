@@ -53,8 +53,8 @@ public class SplashScreen extends JWindow {
     SplashScreen splash = new SplashScreen(4300);
     
     
-    splash.showSplash ();
-    Thread.sleep(100);
+//    splash.showSplash ();
+//    Thread.sleep(50);
 //    
     Login.main();
    

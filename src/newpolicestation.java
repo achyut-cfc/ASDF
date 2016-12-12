@@ -39,7 +39,7 @@ public class newpolicestation extends JFrame {
 				
 				conn = DriverManager.getConnection (Main.url,"clint","passkey1");
 					
-					row+=1;
+//					row+=1;
 				  java.sql.PreparedStatement pst=conn.prepareStatement("Insert into police_dept values(?,?,?,?)");
 		          pst.setString(1,this.newlocation);
 		          pst.setString(2,this.newexecutive);

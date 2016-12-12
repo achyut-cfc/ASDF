@@ -67,7 +67,7 @@ public class admin_policestationpanel extends JPanel {
 //					System.out.println(row);
 					model.removeRow(row);
 					
-				row=row+1;
+//				row=row+1;
 					
 			          java.sql.Connection conn;
 					try {
@@ -169,8 +169,8 @@ public class admin_policestationpanel extends JPanel {
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addComponent(table, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)

@@ -46,7 +46,7 @@ public class admin_criminalrecordpanel extends JPanel {
 						model.removeRow(row);
 						
 					
-						row+=1;
+//						row+=1;
 				          java.sql.Connection conn;
 						try {
 							
@@ -63,7 +63,7 @@ public class admin_criminalrecordpanel extends JPanel {
 					          for(int  r=row;r<=model.getRowCount();r++){
 					        	  
 					        	    
-						          pst=conn.prepareStatement("Update criminals set rowno=? where rowno=? ");
+						          pst=conn.prepareStatement("Update criminals set CId=? where CId=? ");
 						          
 					        	  pst.setString(1,String.valueOf(r));
 					        	  pst.setString(2, String.valueOf(r+1));
@@ -131,10 +131,10 @@ public class admin_criminalrecordpanel extends JPanel {
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addComponent(table_1, GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
-						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-							.addComponent(btnRefresh, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnRefresh, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
@@ -152,7 +152,7 @@ public class admin_criminalrecordpanel extends JPanel {
 						.addComponent(button)
 						.addComponent(button_2)
 						.addComponent(btnRefresh))
-					.addContainerGap(88, Short.MAX_VALUE))
+					.addContainerGap(29, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 
