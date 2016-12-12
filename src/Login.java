@@ -34,6 +34,7 @@ public class Login {
 
 
 	private JPasswordField passwordField;
+	private JLabel lblNewLabel;
 
 
 	/**
@@ -74,6 +75,7 @@ public class Login {
 
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(Color.BLACK);
 		
 		passwordField = new JPasswordField();
 		passwordField.setToolTipText("Password");
@@ -178,27 +180,36 @@ public class Login {
 					.addGap(27))
 		);
 		panel.setLayout(gl_panel);
+		
+		lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("./src/logo2.jpg"));
 
 		
 
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("./src/logo2.jpg"));
+	//	JLabel lblNewLabel_1 = new JLabel("New label");
+		//lblNewLabel_1.setIcon(new ImageIcon("./src/logo2.jpg"));
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(246)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 334, Short.MAX_VALUE)
-					.addGap(246))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(200)
+							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 406, GroupLayout.PREFERRED_SIZE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(226)
+							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 334, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(220, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(229, Short.MAX_VALUE)
+					.addGap(20)
+					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 241, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(50))
+					.addGap(12))
 		);
 
 		frame.getContentPane().setLayout(groupLayout);
@@ -208,5 +219,4 @@ public class Login {
 		
 		btnLogin.requestFocus();
 	}
-
 }

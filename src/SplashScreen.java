@@ -51,11 +51,11 @@ public class SplashScreen extends JWindow {
   public static void main(String[] args) throws MalformedURLException, InterruptedException {
     // Throw a nice little title page up on the screen first
     SplashScreen splash = new SplashScreen(4300);
-    
-    
-//    splash.showSplash ();
-//    Thread.sleep(50);
-//    
+    splash.showSplash ();
+  Thread.sleep(50);
+/*    
+//   
+*///    
     Login.main();
    
     
