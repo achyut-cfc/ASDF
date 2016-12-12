@@ -48,21 +48,14 @@ public class SplashScreen extends JWindow {
   }
 
   public static void main(String[] args) throws MalformedURLException, InterruptedException {
-<<<<<<< HEAD
+
    
   SplashScreen splash = new SplashScreen(4300);
 //    
 //    
     splash.showSplash();
     Thread.sleep(100);
-=======
-    // Throw a nice little title page up on the screen first
-    SplashScreen splash = new SplashScreen(4300);
-    
-    
-//    splash.showSplash ();
-//    Thread.sleep(50);
->>>>>>> branch 'master' of https://github.com/achyut-cfc/ASDF.git
+
 //    
     Login.main();
    
