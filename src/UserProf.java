@@ -56,18 +56,18 @@ public class UserProf extends JFrame {
 		
 		Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
 		
-		JLabel lblName = new JLabel("Name :");
+		JLabel lblName = new JLabel("User ID :"+Login.txtUsername.getText() );
 		lblName.setForeground(Color.WHITE);
-		lblName.setHorizontalAlignment(SwingConstants.CENTER);
-		lblName.setBounds(86, 11, 83, 57);
+		lblName.setHorizontalAlignment(SwingConstants.LEFT);
+		lblName.setBounds(65, 11, 315, 57);
 		lblName.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
-		JLabel lblRank = new JLabel("Designation :");
+		JLabel lblRank = new JLabel("Designation : Informer ");
 		lblRank.setForeground(Color.WHITE);
-		lblRank.setBounds(15, 79, 154, 28);
+		lblRank.setBounds(15, 79, 309, 28);
 		lblRank.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
-		JButton btnMissionReport = new JButton("(informer report)");
+		JButton btnMissionReport = new JButton("Report a crime");
 		btnMissionReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				informer_report b = new informer_report();
