@@ -26,10 +26,18 @@ public class UserProf extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main() {
-		
-					UserProf frame = new UserProf();
-					frame.setVisible(true);
-			
+		UserProf frame = new UserProf();
+		frame.setVisible(true);
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					UserProf frame = new UserProf();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
 	}
 
 	/**
@@ -45,36 +53,36 @@ public class UserProf extends JFrame {
 		Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
 		
 		JLabel lblName = new JLabel("Name :");
-		lblName.setHorizontalAlignment(SwingConstants.CENTER);
-		lblName.setBounds(42, 11, 143, 57);
+		lblName.setBounds(15, 16, 143, 57);
 		lblName.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
-		JLabel lblRank = new JLabel("Designation :");
-		lblRank.setBounds(15, 79, 154, 28);
+		JLabel lblRank = new JLabel("Rank :");
+		lblRank.setBounds(15, 79, 90, 17);
 		lblRank.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
 		JButton btnMissionReport = new JButton("(informer report)");
 		btnMissionReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				informer_report b = new informer_report();
+				b.setVisible(true);
+				setVisible(false);
 			}
 		});
-		btnMissionReport.setBounds(211, 126, 113, 23);
-		
-		JButton btnReportStatus = new JButton("Check  Status");
-		btnReportStatus.setBounds(221, 168, 99, 23);
+		btnMissionReport.setBounds(110, 190, 170, 23);
 		
 		JButton btnBack = new JButton("Log Out");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				Login.main();
 				setVisible(false);
 			}
 		});
-		btnBack.setBounds(211, 223, 113, 23);
+		
+		btnBack.setBounds(314, 190, 113, 23);
 		contentPane.setLayout(null);
 		contentPane.add(btnBack);
 		contentPane.add(btnMissionReport);
-		contentPane.add(btnReportStatus);
 		contentPane.add(lblRank);
 		contentPane.add(lblName);
 	}
