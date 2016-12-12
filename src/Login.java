@@ -25,7 +25,7 @@ import java.awt.event.ActionEvent;
 public class Login {
 
 	JFrame frame;
-	private JTextField txtUsername;
+	static JTextField txtUsername;
 	private JPasswordField passwordField;
 
 
@@ -77,7 +77,8 @@ public class Login {
 				        	  flag=1;
 				        	  if (set.getString("Designation").equals("Informer")){
 				        		  
-				        		  System.out.println("hello");
+				        		  UserProf.main();
+				        		  frame.setVisible(false); 
 				        		  
 				        	  }
 				        	  else if(set.getString("Designation").equals("Admin")){
@@ -87,16 +88,19 @@ public class Login {
 				        	  }
 				        	  else if(set.getString("Designation").equals("Executive")) {
 				        		  
-				        		  UserProf.main();
-				        		  frame.setVisible(true);
+
+				        		  Executive_home.main();
+//github.com/achyut-cfc/ASDF.git
+				        		  frame.setVisible(false);
 				        	  }
 				        	  else{
 				        		  JOptionPane.showMessageDialog(null, "You have not been assigned a designation. Try contacting the admin");
 				        	  }
 				        	  
-				        	  conn.close();
+				        	  
 				        	  
 				          }
+				          conn.close();
 				          if (flag==0){
 				        	  JOptionPane.showMessageDialog(null, "User not found");
 				          }
@@ -104,6 +108,7 @@ public class Login {
 				           
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
+//						JOptionPane.showMessageDialog(null, "Connection failed"+e);
 						e.printStackTrace();
 					}
 				
@@ -111,9 +116,8 @@ public class Login {
 		});
 	
 		txtUsername = new JTextField();
-		txtUsername.setForeground(Color.LIGHT_GRAY);
+		txtUsername.setForeground(Color.BLACK);
 		txtUsername.setHorizontalAlignment(SwingConstants.CENTER);
-		txtUsername.setText("Username");
 		txtUsername.setColumns(10);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
@@ -159,6 +163,9 @@ public class Login {
 					.addGap(50))
 		);
 		frame.getContentPane().setLayout(groupLayout);
+		
+		frame.getRootPane().setDefaultButton(btnLogin);
+		btnLogin.requestFocus();
 	}
 
 }
