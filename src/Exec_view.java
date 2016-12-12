@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
+import java.awt.Color;
 
 public class Exec_view extends JFrame {
 
@@ -42,85 +43,105 @@ public class Exec_view extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 453, 423);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblCasedetails = new JLabel("Case details");
+		lblCasedetails.setForeground(Color.WHITE);
 		lblCasedetails.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblCasedetails.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCasedetails.setBounds(112, 21, 219, 34);
 		contentPane.add(lblCasedetails);
 		
 		JLabel lblCaseNumber = new JLabel("Case Number : ");
+		lblCaseNumber.setForeground(Color.WHITE);
 		lblCaseNumber.setBounds(54, 67, 94, 19);
 		contentPane.add(lblCaseNumber);
 		
 		JLabel lbllocation = new JLabel("Location: ");
+		lbllocation.setForeground(Color.WHITE);
 		lbllocation.setBounds(54, 95, 80, 14);
 		contentPane.add(lbllocation);
 		
 		JLabel lblHairColour = new JLabel("Hair colour :");
+		lblHairColour.setForeground(Color.WHITE);
 		lblHairColour.setBounds(51, 120, 83, 19);
 		contentPane.add(lblHairColour);
 		
 		JLabel lblHairType = new JLabel("Hair type:");
+		lblHairType.setForeground(Color.WHITE);
 		lblHairType.setBounds(54, 150, 65, 19);
 		contentPane.add(lblHairType);
 		
 		JLabel lblcaseno = new JLabel();
+		lblcaseno.setForeground(Color.WHITE);
 		lblcaseno.setBounds(150, 69, 80, 17);
 		contentPane.add(lblcaseno);
 		
 		JLabel lblloc = new JLabel("");
+		lblloc.setForeground(Color.WHITE);
 		lblloc.setBounds(112, 97, 82, 19);
 		contentPane.add(lblloc);
 		
 		JLabel lblhairc = new JLabel("");
+		lblhairc.setForeground(Color.WHITE);
 		lblhairc.setBounds(122, 125, 72, 14);
 		contentPane.add(lblhairc);
 		
 		JLabel lblhairt = new JLabel("");
+		lblhairt.setForeground(Color.WHITE);
 		lblhairt.setBounds(112, 152, 80, 19);
 		contentPane.add(lblhairt);
 		
 		JLabel lblCrime = new JLabel("Crime:");
+		lblCrime.setForeground(Color.WHITE);
 		lblCrime.setBounds(214, 66, 71, 19);
 		contentPane.add(lblCrime);
 		
 		JLabel lblcrimev = new JLabel("");
+		lblcrimev.setForeground(Color.WHITE);
 		lblcrimev.setBounds(275, 66, 108, 19);
 		contentPane.add(lblcrimev);
 		
 		JLabel lblSex = new JLabel("Sex: ");
+		lblSex.setForeground(Color.WHITE);
 		lblSex.setBounds(214, 95, 61, 14);
 		contentPane.add(lblSex);
 		
 		JLabel lblSexv = new JLabel("");
+		lblSexv.setForeground(Color.WHITE);
 		lblSexv.setBounds(275, 95, 65, 14);
 		contentPane.add(lblSexv);
 		
 		JLabel lblSkinColour = new JLabel("Skin colour:");
+		lblSkinColour.setForeground(Color.WHITE);
 		lblSkinColour.setBounds(214, 125, 76, 19);
 		contentPane.add(lblSkinColour);
 		
 		JLabel lblskinc = new JLabel("");
+		lblskinc.setForeground(Color.WHITE);
 		lblskinc.setBounds(285, 122, 55, 19);
 		contentPane.add(lblskinc);
 		
 		JLabel lblFacialHair = new JLabel("Facial hair:");
+		lblFacialHair.setForeground(Color.WHITE);
 		lblFacialHair.setBounds(214, 152, 76, 19);
 		contentPane.add(lblFacialHair);
 		
 		JLabel labelfh = new JLabel("");
+		labelfh.setForeground(Color.WHITE);
 		labelfh.setBounds(284, 152, 72, 19);
 		contentPane.add(labelfh);
 		
 		JLabel lblHeight = new JLabel("Height: ");
+		lblHeight.setForeground(Color.WHITE);
 		lblHeight.setBounds(214, 184, 81, 19);
 		contentPane.add(lblHeight);
 		
 		JLabel lblht = new JLabel("");
+		lblht.setForeground(Color.WHITE);
 		lblht.setBounds(275, 182, 65, 19);
 		contentPane.add(lblht);
 		
@@ -134,6 +155,7 @@ public class Exec_view extends JFrame {
 		contentPane.add(btnClose);
 		
 		JLabel lblPossibleCriminals = new JLabel("possible criminals:");
+		lblPossibleCriminals.setForeground(Color.WHITE);
 		lblPossibleCriminals.setBounds(36, 212, 124, 34);
 		contentPane.add(lblPossibleCriminals);
 		

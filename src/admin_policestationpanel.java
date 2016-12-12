@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class admin_policestationpanel extends JPanel {
 	private JTable table;
@@ -29,6 +30,7 @@ public class admin_policestationpanel extends JPanel {
 	 * Create the panel.
 	 */
 	public admin_policestationpanel() {
+		setBackground(Color.BLACK);
 		setSize(580,400);
 //		DefaultTableModel model;
 		model = new DefaultTableModel();

@@ -13,6 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class admin_criminalrecordpanel extends JPanel {
 	
@@ -23,6 +24,7 @@ public class admin_criminalrecordpanel extends JPanel {
 	 * Create the panel.
 	 */
 	public admin_criminalrecordpanel() {
+		setBackground(Color.BLACK);
 		setSize(580,400);
 		
 		JButton button = new JButton("Add");

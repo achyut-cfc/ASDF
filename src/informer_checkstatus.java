@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
 import javax.swing.JScrollPane;
+import java.awt.Color;
 
 public class informer_checkstatus extends JFrame {
 
@@ -44,6 +45,7 @@ public class informer_checkstatus extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(260, 60, 700,550);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
@@ -52,12 +54,14 @@ public class informer_checkstatus extends JFrame {
 		txtSearch.setColumns(10);
 		
 		JButton btnGo = new JButton("Go");
+		btnGo.setBackground(Color.GREEN);
 		btnGo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		
 		JLabel lblEnterTheCase = new JLabel("Enter the case ID");
+		lblEnterTheCase.setForeground(Color.WHITE);
 		lblEnterTheCase.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		

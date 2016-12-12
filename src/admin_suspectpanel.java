@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTable;
+import java.awt.Color;
 
 public class admin_suspectpanel extends JPanel {
 	private JTable table;
@@ -20,6 +21,7 @@ public class admin_suspectpanel extends JPanel {
 	 * Create the panel.
 	 */
 	public admin_suspectpanel() {
+		setBackground(Color.BLACK);
 		setSize(580,400);
 		
 		JButton button = new JButton("Add");

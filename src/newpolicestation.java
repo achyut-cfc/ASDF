@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class newpolicestation extends JFrame {
 
@@ -64,14 +65,18 @@ public class newpolicestation extends JFrame {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("Location");
+		lblNewLabel.setForeground(Color.WHITE);
 		
 		JLabel lblExecutives = new JLabel("Executives");
+		lblExecutives.setForeground(Color.WHITE);
 		
 		JLabel lblPhoneNumbers = new JLabel("Phone numbers");
+		lblPhoneNumbers.setForeground(Color.WHITE);
 		
 		textField = new JTextField();
 		textField.setColumns(10);

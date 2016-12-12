@@ -36,6 +36,7 @@ public class Executive_home extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(260, 60, 700, 550);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -62,22 +63,25 @@ public class Executive_home extends JFrame {
 			}
 		});
 		btnLogOut.setFont(new Font("Sitka Display", Font.BOLD, 13));
-		btnLogOut.setBackground(Color.LIGHT_GRAY);
+		btnLogOut.setBackground(Color.RED);
 		btnLogOut.setBounds(305, 391, 89, 23);
 		contentPane.add(btnLogOut);
 	
 		JLabel lblLoggedInAs = new JLabel("Logged In As:");
+		lblLoggedInAs.setForeground(Color.WHITE);
 		lblLoggedInAs.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		lblLoggedInAs.setBounds(142, 247, 98, 25);
 		contentPane.add(lblLoggedInAs);
 		
 		JLabel lblWelcome = new JLabel("WELCOME! ");
+		lblWelcome.setForeground(Color.WHITE);
 		lblWelcome.setFont(new Font("Rockwell Extra Bold", Font.BOLD, 24));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setBounds(248, 180, 178, 25);
 		contentPane.add(lblWelcome);
 		
 		JLabel lbllogdetails = new JLabel(Login.txtUsername.getText());
+		lbllogdetails.setForeground(Color.WHITE);
 		lbllogdetails.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lbllogdetails.setHorizontalAlignment(SwingConstants.CENTER);
 		lbllogdetails.setBounds(250, 233, 176, 51);
