@@ -102,7 +102,7 @@ public class newcriminal extends JFrame {
 						
 						conn = DriverManager.getConnection (Main.url,"clint","passkey1");
 							row=admin_criminalrecordpanel.model.getRowCount();
-							row+=1;
+//							row+=1;
 						  java.sql.PreparedStatement pst=conn.prepareStatement("Insert into criminals values(?,?,?,?,?,?,?,?,?,?)");
 						 pst.setString(1,String.valueOf(row));
 						  pst.setString(2, textField.getText());
