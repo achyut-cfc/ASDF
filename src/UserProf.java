@@ -52,12 +52,12 @@ public class UserProf extends JFrame {
 		
 		Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
 		
-		JLabel lblName = new JLabel("Name :");
-		lblName.setBounds(15, 16, 143, 57);
+		JLabel lblName = new JLabel("UserID :" + Login.txtUsername.getText());
+		lblName.setBounds(15, 64, 494, 57);
 		lblName.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
-		JLabel lblRank = new JLabel("Rank :");
-		lblRank.setBounds(15, 79, 90, 17);
+		JLabel lblRank = new JLabel("Rank : Informer ");
+		lblRank.setBounds(15, 139, 294, 17);
 		lblRank.setFont(new Font("Tahoma", Font.BOLD, 23));
 		
 		JButton btnMissionReport = new JButton("(informer report)");
@@ -85,5 +85,10 @@ public class UserProf extends JFrame {
 		contentPane.add(btnMissionReport);
 		contentPane.add(lblRank);
 		contentPane.add(lblName);
+		
+		JLabel lblWelcome = new JLabel("Welcome");
+		lblWelcome.setFont(new Font("Tahoma", Font.BOLD, 23));
+		lblWelcome.setBounds(203, 0, 278, 57);
+		contentPane.add(lblWelcome);
 	}
 }
