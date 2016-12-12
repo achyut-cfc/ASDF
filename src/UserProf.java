@@ -63,19 +63,26 @@ public class UserProf extends JFrame {
 		JButton btnMissionReport = new JButton("(informer report)");
 		btnMissionReport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				informer_report b = new informer_report();
+				b.setVisible(true);
+				setVisible(false);
 			}
 		});
-		btnMissionReport.setBounds(72, 190, 113, 23);
-		
-		JButton btnReportStatus = new JButton("Check  Status");
-		btnReportStatus.setBounds(191, 190, 99, 23);
+		btnMissionReport.setBounds(110, 190, 170, 23);
 		
 		JButton btnBack = new JButton("Log Out");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Login.main();
+				setVisible(false);
+			}
+		});
+		
 		btnBack.setBounds(314, 190, 113, 23);
 		contentPane.setLayout(null);
 		contentPane.add(btnBack);
 		contentPane.add(btnMissionReport);
-		contentPane.add(btnReportStatus);
 		contentPane.add(lblRank);
 		contentPane.add(lblName);
 	}

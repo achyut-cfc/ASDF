@@ -112,27 +112,27 @@ public class informer_report extends JFrame {
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Terrorist Attack");
 		btnGroupType.add(rdbtnNewRadioButton);
-		if (rdbtnNewRadioButton.isSelected()) {
-			Type = "Terrorist Attack";
-		}
+//		if (rdbtnNewRadioButton.isSelected()) {
+//			Type = "Terrorist Attack";
+//		}
 
 		JRadioButton rdbtnKidnap = new JRadioButton("Kidnap");
 		btnGroupType.add(rdbtnKidnap);
-		if (rdbtnKidnap.isSelected()) {
-			Type = "Kidnap";
-		}
+//		if (rdbtnKidnap.isSelected()) {
+//			Type = "Kidnap";
+//		}
 
 		JRadioButton rdbtnHiests = new JRadioButton("Hiests");
 		btnGroupType.add(rdbtnHiests);
-		if (rdbtnHiests.isSelected()) {
-			Type = "Hiests";
-		}
+//		if (rdbtnHiests.isSelected()) {
+//			Type = "Hiests";
+//		}
 
 		JRadioButton rdbtnMurder = new JRadioButton("Murder");
 		btnGroupType.add(rdbtnMurder);
-		if (rdbtnMurder.isSelected()) {
-			Type = "Hiests";
-		}
+//		if (rdbtnMurder.isSelected()) {
+//			Type = "Hiests";
+//		}
 
 		JLabel lblSuspectDetails = new JLabel("Suspect Details");
 		lblSuspectDetails.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -161,56 +161,56 @@ public class informer_report extends JFrame {
 
 		JRadioButton rdbtnMale = new JRadioButton("Male");
 		btnGroupGender.add(rdbtnMale);
-		if (rdbtnMale.isSelected()) {
-			Gender = "Male";
-
-		}
+//		if (rdbtnMale.isSelected()) {
+//			Gender = "Male";
+//
+//		}
 
 		JRadioButton rdbtnFemale = new JRadioButton("Female");
 		btnGroupGender.add(rdbtnFemale);
-		if (rdbtnFemale.isSelected()) {
-			Gender = "Female";
-
-		}
+//		if (rdbtnFemale.isSelected()) {
+//			Gender = "Female";
+//
+//		}
 
 		JRadioButton rdbtnOther = new JRadioButton("Other");
 		btnGroupGender.add(rdbtnOther);
-		if (rdbtnOther.isSelected()) {
-			Gender = "Other";
-
-		}
+//		if (rdbtnOther.isSelected()) {
+//			Gender = "Other";
+//
+//		}
 
 		JLabel lblSkintone = new JLabel("Skintone");
 		lblSkintone.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
 		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Pale");
 		btnGroupSkintone.add(rdbtnNewRadioButton_1);
-		if (rdbtnNewRadioButton_1.isSelected()) {
-			Skintone = "Pale";
-
-		}
+//		if (rdbtnNewRadioButton_1.isSelected()) {
+//			Skintone = "Pale";
+//
+//		}
 
 		JRadioButton rdbtnFair = new JRadioButton("Fair");
 		btnGroupSkintone.add(rdbtnFair);
-		if (rdbtnFair.isSelected()) {
-			Skintone = "Fair";
-
-		}
+//		if (rdbtnFair.isSelected()) {
+//			Skintone = "Fair";
+//
+//		}
 		
 
 		JRadioButton rdbtnTan = new JRadioButton("Tan");
 		btnGroupSkintone.add(rdbtnTan);
-		if (rdbtnTan.isSelected()) {
-			Skintone = "Tan";
-
-		}
+//		if (rdbtnTan.isSelected()) {
+//			Skintone = "Tan";
+//
+//		}
 
 		JRadioButton rdbtnDark = new JRadioButton("Dark");
 		btnGroupSkintone.add(rdbtnDark);
-		if (rdbtnDark.isSelected()) {
-			Skintone = "Dark";
-
-		}
+//		if (rdbtnDark.isSelected()) {
+//			Skintone = "Dark";
+//
+//		}
 
 		JLabel lblHair = new JLabel("Hair");
 		lblHair.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -221,7 +221,7 @@ public class informer_report extends JFrame {
 		JComboBox HaircolourCombobox = new JComboBox();
 		HaircolourCombobox.setModel(new DefaultComboBoxModel(
 				new String[] { "" ,"Black", "Grey", "White", "Blonde", "Brown", "Red", "Coloured",  }));
-		Haircolour = (String) HaircolourCombobox.getSelectedItem();
+//		Haircolour = (String) HaircolourCombobox.getSelectedItem();
 
 		JLabel lblNewLabel_1 = new JLabel("Type");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -229,7 +229,7 @@ public class informer_report extends JFrame {
 		JComboBox HairstyleCombobox = new JComboBox();
 		HairstyleCombobox
 				.setModel(new DefaultComboBoxModel(new String[] { "", "Straight", "Curly", "Wavy", "Bald",  }));
-		HaircolourType = (String) HairstyleCombobox.getSelectedItem();
+//		HaircolourType = (String) HairstyleCombobox.getSelectedItem();
 
 		JLabel lblFacialHair = new JLabel("Facial Hair");
 		lblFacialHair.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -237,7 +237,7 @@ public class informer_report extends JFrame {
 		JComboBox FacialhairCombobox = new JComboBox();
 		FacialhairCombobox.setModel(new DefaultComboBoxModel(
 				new String[] { "", "Bearded", "Stubble", "Goatee", "Moustache only", "None",  }));
-		FacialHair = (String) FacialhairCombobox.getSelectedItem();
+//		FacialHair = (String) FacialhairCombobox.getSelectedItem();
 
 		textField = new JTextField();
 		textField.setToolTipText("Enter Tags like Names ,Places ,Associates, etc");
@@ -253,7 +253,7 @@ public class informer_report extends JFrame {
 
 		JComboBox LocationComboBox = new JComboBox();
 		LocationComboBox.setModel(new DefaultComboBoxModel(new String[] {"", "Noida", "Delhi", "Dadri", "Other" }));
-		Location = (String) FacialhairCombobox.getSelectedItem();
+//		Location = (String) FacialhairCombobox.getSelectedItem();
 
 		JRadioButton rdbtnOther_1 = new JRadioButton("Other");
 		btnGroupType.add(rdbtnOther_1);
@@ -261,6 +261,53 @@ public class informer_report extends JFrame {
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if (rdbtnMale.isSelected()) {
+					Gender = "Male";
+
+				}
+				
+				if (rdbtnNewRadioButton.isSelected()) {
+					Type = "Terrorist Attack";
+				}
+				if (rdbtnKidnap.isSelected()) {
+					Type = "Kidnap";
+				}
+				if (rdbtnHiests.isSelected()) {
+					Type = "Hiests";
+				}
+				if (rdbtnFemale.isSelected()) {
+					Gender = "Female";
+
+				}
+				if (rdbtnMurder.isSelected()) {
+					Type = "Hiests";
+				}
+				if (rdbtnOther.isSelected()) {
+					Gender = "Other";
+
+				}
+				if (rdbtnNewRadioButton_1.isSelected()) {
+					Skintone = "Pale";
+
+				}
+				if (rdbtnFair.isSelected()) {
+					Skintone = "Fair";
+
+				}
+				if (rdbtnTan.isSelected()) {
+					Skintone = "Tan";
+
+				}
+				if (rdbtnDark.isSelected()) {
+					Skintone = "Dark";
+
+				}
+				Haircolour = (String) HaircolourCombobox.getSelectedItem();
+				HaircolourType = (String) HairstyleCombobox.getSelectedItem();
+				FacialHair = (String) FacialhairCombobox.getSelectedItem();
+				Location = (String) LocationComboBox.getSelectedItem();
+				
 				java.sql.Connection conn;
 
 				try {
@@ -295,29 +342,51 @@ public class informer_report extends JFrame {
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				
+					
+				}
+				finally {
+					UserProf a = new UserProf();
+					a.setVisible(true);
+
+					   setVisible(false);
 				}
 			}
 		});
 
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UserProf a = new UserProf();
+a.setVisible(true);
+
+   setVisible(false);
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addComponent(lblReportANew, GroupLayout.PREFERRED_SIZE, 664, GroupLayout.PREFERRED_SIZE)
 				.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 674, GroupLayout.PREFERRED_SIZE)
-				.addGroup(gl_contentPane.createSequentialGroup().addGap(520).addComponent(btnBack)
-						.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(btnSubmit)));
-		gl_contentPane
-				.setVerticalGroup(
-						gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(lblReportANew, GroupLayout.PREFERRED_SIZE, 42,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 420,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-												.addComponent(btnBack).addComponent(btnSubmit))));
+				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+					.addContainerGap(531, Short.MAX_VALUE)
+					.addComponent(btnBack)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnSubmit)
+					.addGap(59))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(lblReportANew, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 420, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnBack)
+						.addComponent(btnSubmit))
+					.addContainerGap())
+		);
 
 		/*
 		 * java.sql.Connection conn;
