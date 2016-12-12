@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class newcriminal extends JFrame {
 
@@ -63,26 +64,35 @@ public class newcriminal extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 480,570);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
 		JLabel lblAddNewCriminal = new JLabel("Add new Criminal");
+		lblAddNewCriminal.setForeground(Color.WHITE);
 		lblAddNewCriminal.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblName = new JLabel("Name");
+		lblName.setForeground(Color.WHITE);
 		
 		JLabel lblNewLabel = new JLabel("Sex");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JLabel lblAge = new JLabel("Age");
+		lblAge.setForeground(Color.WHITE);
 		
 		JLabel lblHairColour = new JLabel("Hair Colour");
+		lblHairColour.setForeground(Color.WHITE);
 		
 		JLabel lblSkinColour = new JLabel("Hair type");
+		lblSkinColour.setForeground(Color.WHITE);
 		
 		JLabel lblNewLabel_1 = new JLabel("facial Hair");
+		lblNewLabel_1.setForeground(Color.WHITE);
 		
 		JLabel lblHeight = new JLabel("Skin colour");
+		lblHeight.setForeground(Color.WHITE);
 		
 		JButton btnOk = new JButton("OK");
 		btnOk.addActionListener(new ActionListener() {
@@ -126,8 +136,10 @@ public class newcriminal extends JFrame {
 		});
 		
 		JLabel lblAssociates = new JLabel("associates");
+		lblAssociates.setForeground(Color.WHITE);
 		
 		JLabel lblHeight_1 = new JLabel("Height");
+		lblHeight_1.setForeground(Color.WHITE);
 		
 		
 		
@@ -217,6 +229,9 @@ public class newcriminal extends JFrame {
 					.addGap(114))
 		);
 		contentPane.setLayout(gl_contentPane);
+		
+		contentPane.getRootPane().setDefaultButton(btnOk);
+		btnOk.requestFocus();
 	}
 
 }
